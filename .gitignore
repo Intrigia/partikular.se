@@ -8,6 +8,16 @@
 wp-content/*
 !wp-content/plugins/
 !wp-content/themes/
+
+wp-content/plugins/wps-hide-login/
+wp-content/plugins/wps-hide-login/
+wp-content/plugins/wp-smushit/
+wp-content/plugins/wordpress-seo/
+wp-content/plugins/wordfence/
+wp-content/plugins/schema-and-structured-data-for-wp/
+wp-content/plugins/akismet/
+
+
  
 # Ignore everything in the "plugins" directory, except the plugins you
 # specify (see the commented-out examples for hints on how to do this.)
