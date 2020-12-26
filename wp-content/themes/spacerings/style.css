@@ -1,0 +1,2187 @@
+@charset "UTF-8";
+/*
+Theme Name: Space Rings
+Theme URI: https://karlochanton.se
+Author: Karl Sellergren
+Author URI: https://www.linkedin.com/in/karlsellergren
+Description: A custom designed theme used for the website 'partikular.se'. Advanced hover designs, responsive layout with CSS grid. Enjoy!
+Requires at least: WordPress 4.9.6
+Version: 1.4
+License: GNU General Public License v2 or later
+License URI: LICENSE
+Text Domain: sciencemag
+Tags: one-column, flexible-header, accessibility-ready, custom-colors, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, rtl-language-support, sticky-post, threaded-comments, translation-ready
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+
+Science Mag is based on Underscores https://underscores.me/, (C) 2012-2018 Automattic, Inc.
+Underscores is distributed under the terms of the GNU GPL v2 or later.
+*/
+html {
+	line-height: 1.15; /* 1 */
+	-webkit-text-size-adjust: 100%; /* 2 */
+  background-color: black;
+}
+
+/* Sections
+	 ========================================================================== */
+
+/**
+ * Remove the margin in all browsers.
+ */
+
+body {
+	margin: 0;
+  font-family: 'Poppins', helvetica, sans-serif;
+  color: white !important;
+}
+
+/* Grouping content
+	 ========================================================================== */
+
+/**
+ * 1. Add the correct box sizing in Firefox.
+ * 2. Show the overflow in Edge and IE.
+ */
+
+hr {
+	box-sizing: content-box; /* 1 */
+	height: 0; /* 1 */
+	overflow: visible; /* 2 */
+}
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+
+pre {
+	font-family: monospace, monospace; /* 1 */
+	font-size: 1em; /* 2 */
+}
+
+/* Text-level semantics
+	 ========================================================================== */
+
+/**
+ * Remove the gray background on active links in IE 10.
+ */
+
+a {
+	background-color: transparent;
+}
+
+/**
+ * 1. Remove the bottom border in Chrome 57-
+ * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
+ */
+
+abbr[title] {
+	border-bottom: none; /* 1 */
+	text-decoration: underline; /* 2 */
+	text-decoration: underline dotted; /* 2 */
+}
+
+/**
+ * Add the correct font weight in Chrome, Edge, and Safari.
+ */
+
+b,
+strong {
+	font-weight: bolder;
+}
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+
+code,
+kbd,
+samp {
+	font-family: monospace, monospace; /* 1 */
+	font-size: 1em; /* 2 */
+}
+
+/**
+ * Add the correct font size in all browsers.
+ */
+
+small {
+	font-size: 80%;
+}
+
+/**
+ * Prevent `sub` and `sup` elements from affecting the line height in
+ * all browsers.
+ */
+
+sub,
+sup {
+	font-size: 75%;
+	line-height: 0;
+	position: relative;
+	vertical-align: baseline;
+}
+
+sub {
+	bottom: -0.25em;
+}
+
+sup {
+	top: -0.5em;
+}
+
+/* Embedded content
+	 ========================================================================== */
+
+/**
+ * Remove the border on images inside links in IE 10.
+ */
+
+img {
+	border-style: none;
+}
+
+/* Forms
+	 ========================================================================== */
+
+/**
+ * 1. Change the font styles in all browsers.
+ * 2. Remove the margin in Firefox and Safari.
+ */
+
+button,
+input,
+optgroup,
+select,
+textarea {
+	font-family: inherit; /* 1 */
+	font-size: 100%; /* 1 */
+	line-height: 1.15; /* 1 */
+	margin: 0; /* 2 */
+}
+
+/**
+ * Show the overflow in IE.
+ * 1. Show the overflow in Edge.
+ */
+
+button,
+input { /* 1 */
+	overflow: visible;
+}
+
+/**
+ * Remove the inheritance of text transform in Edge, Firefox, and IE.
+ * 1. Remove the inheritance of text transform in Firefox.
+ */
+
+button,
+select { /* 1 */
+	text-transform: none;
+}
+
+/**
+ * Correct the inability to style clickable types in iOS and Safari.
+ */
+
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+	-webkit-appearance: button;
+}
+
+/**
+ * Remove the inner border and padding in Firefox.
+ */
+
+button::-moz-focus-inner,
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
+	border-style: none;
+	padding: 0;
+}
+
+/**
+ * Restore the focus styles unset by the previous rule.
+ */
+
+button:-moz-focusring,
+[type="button"]:-moz-focusring,
+[type="reset"]:-moz-focusring,
+[type="submit"]:-moz-focusring {
+	outline: 1px dotted ButtonText;
+}
+
+/**
+ * Correct the padding in Firefox.
+ */
+
+fieldset {
+	padding: 0.35em 0.75em 0.625em;
+}
+
+/**
+ * 1. Correct the text wrapping in Edge and IE.
+ * 2. Correct the color inheritance from `fieldset` elements in IE.
+ * 3. Remove the padding so developers are not caught out when they zero out
+ *		`fieldset` elements in all browsers.
+ */
+
+legend {
+	box-sizing: border-box; /* 1 */
+	color: inherit; /* 2 */
+	display: table; /* 1 */
+	max-width: 100%; /* 1 */
+	padding: 0; /* 3 */
+	white-space: normal; /* 1 */
+}
+
+/**
+ * Add the correct vertical alignment in Chrome, Firefox, and Opera.
+ */
+
+progress {
+	vertical-align: baseline;
+}
+
+/**
+ * Remove the default vertical scrollbar in IE 10+.
+ */
+
+textarea {
+	overflow: auto;
+}
+
+/**
+ * 1. Add the correct box sizing in IE 10.
+ * 2. Remove the padding in IE 10.
+ */
+
+[type="checkbox"],
+[type="radio"] {
+	box-sizing: border-box; /* 1 */
+	padding: 0; /* 2 */
+}
+
+/**
+ * Correct the cursor style of increment and decrement buttons in Chrome.
+ */
+
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
+	height: auto;
+}
+
+/**
+ * 1. Correct the odd appearance in Chrome and Safari.
+ * 2. Correct the outline style in Safari.
+ */
+
+[type="search"] {
+	-webkit-appearance: textfield; /* 1 */
+	outline-offset: -2px; /* 2 */
+}
+
+/**
+ * Remove the inner padding in Chrome and Safari on macOS.
+ */
+
+[type="search"]::-webkit-search-decoration {
+	-webkit-appearance: none;
+}
+
+/**
+ * 1. Correct the inability to style clickable types in iOS and Safari.
+ * 2. Change font properties to `inherit` in Safari.
+ */
+
+::-webkit-file-upload-button {
+	-webkit-appearance: button; /* 1 */
+	font: inherit; /* 2 */
+}
+
+/* Interactive
+	 ========================================================================== */
+
+/*
+ * Add the correct display in Edge, IE 10+, and Firefox.
+ */
+
+details {
+	display: block;
+}
+
+/*
+ * Add the correct display in all browsers.
+ */
+
+summary {
+	display: list-item;
+}
+
+/* Misc
+	 ========================================================================== */
+
+/**
+ * Add the correct display in IE 10+.
+ */
+
+template {
+	display: none;
+}
+
+/**
+ * Add the correct display in IE 10.
+ */
+
+[hidden] {
+	display: none;
+}
+
+
+/*--------------------------------------------------------------
+# Accessibility
+--------------------------------------------------------------*/
+/* Text meant only for screen readers. */
+.screen-reader-text {
+	border: 0;
+	clip: rect(1px, 1px, 1px, 1px);
+	clip-path: inset(50%);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute !important;
+	width: 1px;
+	word-wrap: normal !important; /* Many screen reader and browser combinations announce broken words as they would appear visually. */
+}
+
+.screen-reader-text:focus {
+	background-color: #f1f1f1;
+	border-radius: 3px;
+	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+	clip: auto !important;
+	clip-path: none;
+	color: #21759b;
+	display: block;
+	font-size: 14px;
+	font-size: 0.875rem;
+	font-weight: bold;
+	height: auto;
+	left: 5px;
+	line-height: normal;
+	padding: 15px 23px 14px;
+	text-decoration: none;
+	top: 5px;
+	width: auto;
+	z-index: 100000;
+	/* Above WP toolbar. */
+}
+
+/* Do not show the outline on the skip link target. */
+#content[tabindex="-1"]:focus {
+	outline: 0;
+}
+
+/*--------------------------------------------------------------
+# HEADER FOR SCIENCEMAG
+--------------------------------------------------------------*/
+
+#visibilityhidden {
+	position: absolute !important;
+    clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+    clip: rect(1px, 1px, 1px, 1px);
+}
+
+a {
+	color: white;
+	text-decoration: none;
+}
+.site-branding {
+	position: fixed;
+	top: 1.1em;
+	left: 1.1em;
+}
+
+::-webkit-scrollbar {
+	display: none;
+}
+.sciencemag__navigation {
+  background-color: black;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  min-height: 70px;
+  z-index: 1000;
+}
+#primary-menu {
+  margin: 0 auto;
+  padding: 0;
+  position: absolute;
+  left: calc(50% - 70px);
+  transform: translateX(-50%);
+  top: 1.1em;
+  z-index: 1002;
+  white-space: nowrap;
+}
+#primary-menu li a {
+  display: block;
+  padding: 8px 12px;
+  padding-bottom: 3px;
+  color: white;
+  font-size: 0.9em;
+  letter-spacing: 1px;
+  text-decoration: none;
+}
+#primary-menu .menu-item {
+  display: inline-block;
+}
+#primary-menu .menu-item:hover .sub-menu {
+	display: block;
+}
+#primary-menu .sub-menu {
+	display: none;
+	position: absolute;
+	background-color: black;
+	min-width: 180px;
+	padding: 0;
+	padding-bottom: 20px;
+}
+#primary-menu .sub-menu li {
+	display: block;
+	font-size: 14px;
+	padding: 8px;
+	text-align: left;
+	padding-bottom: 0;
+}
+#primary-menu .sub-menu li a::before {
+	content: "● ";
+	font-size: 20px;
+}
+/*******************************************************************************
+********************************************************************************
+********************************************************************************
+********************************************************************************
+*******************************************************************************/
+.sub-menu .particle a::before {
+	color: #BD00FF !important;
+}
+.sub-menu .aero a::before {
+	color: #00FF80 !important;
+}
+.sub-menu .ai a::before {
+	color: #019F87 !important;
+}
+.sub-menu .brain a::before {
+	color: #FFBB03 !important;
+}
+.sub-menu .cademy a::before {
+	color: #0ff0fc !important;
+}
+.sub-menu .health a::before {
+	color: #FF5555 !important;
+}
+.sub-menu .filo a::before {
+	color: #52db38 !important;
+}
+.sub-menu .psyc a::before {
+	color: #f73333 !important;
+}
+/*******************************************************************************
+********************************************************************************
+********************************************************************************
+********************************************************************************
+*******************************************************************************/
+#primary-menu .sub-menu li a {
+	color: #949494 !important;
+}
+#primary-menu li a:hover {
+  color: white;
+  text-decoration: none;
+}
+#primary-menu .sub-menu li a:hover {
+	color: #d6d6d6 !important;
+	transition: 0.3s;
+}
+.sciencemag__navbar__search {
+	outline: 0;
+	padding: 0.8em 1.3em;
+	padding-left: 2.5em;
+	border: 0;
+	background-color: black;
+	font-size: 0.9em;
+	color: white;
+	z-index: 1001;
+	cursor: pointer;
+	position: relative;
+}
+.sciencemag__navbar__search::before {
+	content: "";
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' version='1.1' id='Capa_1' x='0px' y='0px' width='15px' height='15px' viewBox='0 0 475.084 475.084' style='enable-background:new 0 0 475.084 475.084;' xml:space='preserve' class=''%3E%3Cg%3E%3Cg%3E%3Cpath d='M464.524,412.846l-97.929-97.925c23.6-34.068,35.406-72.047,35.406-113.917c0-27.218-5.284-53.249-15.852-78.087 c-10.561-24.842-24.838-46.254-42.825-64.241c-17.987-17.987-39.396-32.264-64.233-42.826 C254.246,5.285,228.217,0.003,200.999,0.003c-27.216,0-53.247,5.282-78.085,15.847C98.072,26.412,76.66,40.689,58.673,58.676 c-17.989,17.987-32.264,39.403-42.827,64.241C5.282,147.758,0,173.786,0,201.004c0,27.216,5.282,53.238,15.846,78.083 c10.562,24.838,24.838,46.247,42.827,64.234c17.987,17.993,39.403,32.264,64.241,42.832c24.841,10.563,50.869,15.844,78.085,15.844 c41.879,0,79.852-11.807,113.922-35.405l97.929,97.641c6.852,7.231,15.406,10.849,25.693,10.849 c9.897,0,18.467-3.617,25.694-10.849c7.23-7.23,10.848-15.796,10.848-25.693C475.088,428.458,471.567,419.889,464.524,412.846z M291.363,291.358c-25.029,25.033-55.148,37.549-90.364,37.549c-35.21,0-65.329-12.519-90.36-37.549 c-25.031-25.029-37.546-55.144-37.546-90.36c0-35.21,12.518-65.334,37.546-90.36c25.026-25.032,55.15-37.546,90.36-37.546 c35.212,0,65.331,12.519,90.364,37.546c25.033,25.026,37.548,55.15,37.548,90.36C328.911,236.214,316.392,266.329,291.363,291.358z ' data-original='%23000000' class='active-path' data-old_color='%23000000' fill='%23FFFFFF'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+	position: absolute;
+	top: 0.8em;
+	left: 0.9em;
+	z-index: 2000;
+	padding: 7px;
+}
+#menu_sites {
+	display: inline;
+	outline: 0;
+	padding: 0.8em 1.3em;
+	padding-left: 2.5em;
+	border: 0;
+	background-color: black;
+	font-size: 0.9em;
+	color: white;
+	z-index: 1001;
+	cursor: pointer;
+	position: relative;
+}
+#menu_sites::before {
+	content: "";
+	height: 4.9px;
+	width: 4.9px;
+	position: absolute;
+	left: 0.9em;
+	top: 1em;
+	border: solid white;
+	border-width: 0 3px 3px 0;
+	-webkit-transform: rotate(45deg);
+	-ms-transform: rotate(45deg);
+	transform: rotate(45deg);
+}
+#menu_sites div {
+	position: absolute;
+	display: none;
+	top: 2em;
+	left: 0;
+	width: 10em;
+	background-color: black;
+}
+#menu_sites:hover div {
+	display: block;
+}
+#menu_sites div ul {
+	list-style-type: none;
+	padding: 1em;
+	padding-top: 0;
+}
+#menu_sites div ul li a {
+	color: #949494;
+	font-size: 0.9em;
+	padding: 0.5em 0;
+	transition: 0.3s;
+}
+#menu_sites div ul li a:hover {
+	color: white;
+}
+#menu_sites div ul li {
+	margin-top: 1.5em;
+}
+#signup_button {
+	padding: 0.8em 1.3em;
+	background: linear-gradient(-45deg,#803397,#833e9b,#704e97,#605d92,#4b7195,#257f93, #019f87);
+	color: white;
+	font-weight: 500;
+	font-size: 0.9em;
+	border-radius: 4em;
+	transition: 0.3s;
+	display: inline;
+}
+#signup_button:hover {
+	filter: brightness(1.1);
+}
+.sciencemag__navbar__hamburger {
+  display: none;
+  padding: 20px;
+  overflow: hidden;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  z-index: 9999;
+  outline: none;
+  cursor: pointer;
+  margin-left: 10px;
+}
+.sciencemag__hamburger__icon {
+  margin: 0;
+  position: relative;
+  padding: 20px;
+  background-color: transparent;
+  transition: 1s;
+}
+.sciencemag__hamburger__icon hr {
+  background-color: white;
+  padding: 1.5px 0;
+  border: none;
+  border-radius: 2px;
+  margin: 0;
+  width: 0;
+  height: 0;
+  transition: 0.6s;
+  position: absolute;
+}
+#top_line {
+  width: 25px;
+  top: 10.5px;
+  right: 8px;
+}
+#middle_line {
+  width: 20px;
+  top: 18px;
+  right: 8px;
+}
+#bottom_line {
+  width: 15px;
+  top: 24.5px;
+  right: 8px;
+}
+#cross_line {
+	height: 25px;
+	padding: 0 1.5px;
+	top: 50px;
+	right: 19px;
+}
+.header_right_container {
+	position: fixed;
+	top: 0.9em;
+	right: 1em;
+	display: flex;
+	align-items: center;
+}
+@media all and (max-width: 880px) {
+	#primary-menu {display: none;}
+	.sciencemag__navbar__hamburger {display: inline;}
+	#menu_sites {display: none;}
+}
+@media all and (max-width: 576px) {
+	#signup_button {display: none;}
+}
+
+/*--------------------------------------------------------------
+# COOKIE BANNER
+--------------------------------------------------------------*/
+.sciencemag__cookie__notice__wrapper {
+	position: fixed;
+	width: 100%;
+	top: 0;
+	left: 0;
+	z-index: 99999999;
+	font-family: 'Lato', sans-serif;
+	background-color: #1C1B1B;
+	display: none;
+	grid-template-columns: 90% 10%;
+}
+.cookie__notice__text {
+	margin: 10px 20px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+.cookie__notice__text span {
+	font-size: 14px;
+	color: #eee;
+	text-align: left;
+}
+.cookie__notice__text a {
+	color: white;
+}
+.cookie__notice__btn {
+	padding: 10px 0;
+	cursor: pointer;
+	background-color: #2E2E2E;
+	font-size: 14px;
+	text-align: center;
+	text-decoration: none;
+}
+.cookie__banner__mobile__menu {
+	top: 34px !important;
+}
+.cookie__banner__navigation {
+	transform: translateY(34px);
+}
+@media all and (max-width: 712px) {
+	.cookie__notice__btn {padding: 20px 0;}
+	.sciencemag__cookie__notice__wrapper {grid-template-columns: 80% 20%;}
+	.cookie__notice__text {white-space: normal;height: 40px;}
+	.cookie__banner__mobile__menu {height: calc(100% - 116px) !important;}
+	.cookie__banner__navigation {transform: translateY(60px);}
+}
+@media all and (max-width: 432px) {
+	.cookie__notice__btn {padding: 20px 0;}
+	.cookie__notice__text {white-space: normal;height: 55px;}
+	.cookie__banner__mobile__menu {height: calc(100% - 131px) !important;}
+	.cookie__banner__navigation {transform: translateY(75px);}
+}
+
+/*--------------------------------------------------------------
+# MOBILE MENU FOR SCIENCEMAG
+--------------------------------------------------------------*/
+.mobile__menu__blur {
+	display: none;
+	position: fixed;
+	width: 100%;
+	height: 100vh;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	z-index: 1100;
+	background-color: rgba(0, 0, 0, 0.4);
+	backdrop-filter: blur(2px);
+}
+.sciencemag__mobile__menu {
+	position: fixed;
+	right: 0;
+	top: 0;
+	width: 0;
+	background-color: black;
+	height: 100%;
+	z-index: 1200;
+	overflow: auto;
+	border-left: 1px solid #555;
+}
+.sciencemag__mobile__menu::-webkit-scrollbar {
+	display: none;
+}
+#menu-categories-for-mobile-menu {
+	margin: 0;
+	padding: 0;
+	position: relative;
+}
+#menu-categories-for-mobile-menu li {
+	display: block;
+	border-bottom: 1px solid #555;
+	position: relative;
+}
+#menu-categories-for-mobile-menu li a {
+	display: block;
+	margin: 4px 0 4px 0;
+	padding: 13px 30px;
+	font-size: 22px;
+	text-align: right;
+	text-transform: uppercase;
+	cursor: pointer;
+	transition: 0.3s;
+}
+#menu-categories-for-mobile-menu li a:hover {
+	color: #d4d4d4;
+}
+#menu-categories-for-mobile-menu .menu-item-has-children a::before {
+	content: "+";
+	position: absolute;
+	left: 20px;
+}
+#menu-categories-for-mobile-menu .sub-menu {
+	background-color: #eee;
+	padding-left: 0;
+	height: 0;
+	overflow-y: hidden;
+}
+#menu-categories-for-mobile-menu .sub-menu li:first-child {
+	padding-top: 3px;
+}
+#menu-categories-for-mobile-menu .sub-menu li:last-child {
+	border-bottom-color: #eee;
+}
+#menu-categories-for-mobile-menu .sub-menu li a {
+	color: black;
+	font-size: 18px;
+	transition: 0.3s;
+}
+#menu-categories-for-mobile-menu .sub-menu li a:hover {
+	color: #767676;
+}
+#menu-categories-for-mobile-menu .sub-menu li a::before {
+	content: "● ";
+	position: inherit;
+	color: #eee;
+}
+#mobile_menu__default {
+	list-style-type: none;
+	padding-right: 30px;
+}
+
+#mobile_menu__default li a {
+	display: block;
+	font-size: 22px;
+	text-align: right;
+	margin: 4px 0 4px 0;
+	padding: 10px 0;
+	transition: 0.3s;
+}
+#mobile_menu__default li a:hover {
+	color: #949494;
+}
+
+
+/*--------------------------------------------------------------
+# SEARCH WINDOW FOR SCIENCEMAG
+--------------------------------------------------------------*/
+.sciencemag__search__wrap {
+	position: relative;
+	margin-top: 70px;
+	background-color: #0A0A0A;
+	width: 100%;
+	height: 0;
+	transition: 0.3s;
+	transition-timing-function: ease-in;
+	z-index: 1;
+}
+.searchbox__wrap {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	white-space: nowrap;
+	display: none;
+	z-index: 1;
+}
+.searchbox__wrap input[type=search] {
+	display: inline-block;
+  height: 70px;
+  background-color: #eee;
+  border: none;
+  outline: none;
+  font-size: 18px;
+  color: black;
+	width: calc(100% - 150px);
+	padding-left: 2vw;
+	transition: 0.5s;
+	line-height: normal;
+}
+/* style the 'X' in Chrome */
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {margin-right: 20px;}
+
+/* style the 'X' in Internet Explorer */
+input[type=search]::-ms-clear {  margin-right: 20px; }
+input[type=search]::-ms-reveal {  margin-right: 20px; }
+
+.searchbox__wrap input[type=submit] {
+	display: inline-block;
+	position: relative;
+	height: 70px;
+	background-color: #dddddd;
+	border: none;
+	outline: 0;
+	color: black;
+	width: 150px;
+	padding: 0;
+	line-height: 0.1;
+	padding-top: 2px;
+	cursor: pointer;
+	transition: 0.5s;
+	-webkit-box-shadow: inset 8px 0px 24px 0px rgba(0,0,0,0.27);
+	-moz-box-shadow: inset 8px 0px 24px 0px rgba(0,0,0,0.27);
+	box-shadow: inset 8px 0px 24px 0px rgba(0,0,0,0.27);
+}
+.searchbox__wrap form label {
+	margin-right: -5px;
+}
+.searchbox__wrap input[type=submit]:hover {
+	width: 180px;
+	margin-left: -30px;
+}
+.searchbox__wrap button {
+	height: 50px;
+	display: inline-block;
+	background-color: #202020;
+	color: white;
+	border: none;
+	outline: 0;
+	border-radius: 25px;
+	width: 50px;
+}
+@media screen and (max-width: 576px) {
+	.searchbox__wrap input[type=submit] {width: 90px;}
+	.searchbox__wrap input[type=search] {width: calc(100% - 90px);}
+}
+
+/*--------------------------------------------------------------
+# HOMEPAGE FOR SCIENCEMAG
+--------------------------------------------------------------*/
+#sciencemag_particles {
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 0;
+	height: 100% !important;
+	width: 100%;
+}
+#page {
+	position: relative;
+}
+.top_row_wrapper {
+	float: right;
+}
+.bottom_row_wrapper {
+	float: right;
+	color: rgb(197, 197, 197);
+}
+#sciencemag_particles canvas {
+	display: block;
+  margin: 0;
+  padding: 0;
+  height: 100% !important;
+  width: 100%;
+  background-color: black;
+}
+.sciencemag__hero__wrapper {
+	margin-top: 70px;
+	position: relative;
+	display: grid;
+}
+.sciencemag__post__planet {
+	order: 1;
+	-webkit-order: 1;
+	width: 55vw;
+	height: 55vw;
+	border-radius: 100%;
+	position: relative;
+	border: 2vw solid;
+	margin-top: 4vw;
+	margin-left: 4vw;
+	transition: 0.5s;
+	overflow: hidden;
+}
+.hero__text {
+	order: 2;
+	-webkit-order: 2;
+	margin-left: 30px;
+}
+.sciencemag__post__planet:hover {
+	transform: scale(1.03);
+}
+.sciencemag__post__feat__image {
+	width: 43vw;
+	height: 43vw;
+	position: absolute;
+	left: 6vw;
+	top: 6vw;
+	border-radius: 100%;
+	overflow: hidden;
+}
+.sciencemag__post__feat__image img {
+	transition: 0.5s;
+  object-fit: cover;
+  width: 43vw;
+  height: 43vw;
+}
+.sciencemag__wrapper__title {
+	margin-right: 40px;
+	position: relative;
+}
+.sciencemag__wrapper__title h2 {
+	width: 100%;
+	font-size: 6vw;
+  line-height: 1.2;
+  font-weight: 500;
+	text-align: right;
+  margin: 0;
+  z-index: 1000;
+	/* These are technically the same, but use both */
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  hyphens: auto;
+  -ms-hyphens: auto;
+  -ms-word-break: break-all;
+  /* This is the dangerous one in WebKit, as it breaks things wherever */
+  word-break: break-all;
+  /* Instead use this non-standard one: */
+  word-break: break-word;
+  float: right;
+}
+.sciencemag__wrapper__title p {
+	overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  line-height: 24px;
+  max-height: 72px;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+	font-size: 15px;
+	text-align: right;
+	margin: 1vw 0 0 30vw;
+	max-height: 48px;
+	-webkit-line-clamp: 2;
+	float: right;
+}
+.sciencemag__wrapper__title h4 {
+	font-size: 3vw;
+	font-weight: 500;
+	text-align: right;
+	margin: 0;
+}
+.sciencemag__wrapper__title h6 {
+	display: inline-block;
+	font-size: 1.6vw;
+	font-weight: 400;
+	color: #D6D6D6;
+	margin: 0;
+	margin-top: 5vw;
+	margin-left: 1.8vw;
+	margin-right: 1.8vw;
+	float: right;
+}
+.sciencemag__wrapper__scroller {
+	display: none;
+}
+.sciencemag__post__planet svg {
+	position: absolute;
+	top: 3.5vw;
+	left: 3.5vw;
+	transform-origin: center center;
+	animation: rotateplanet 15s linear infinite;
+	width: 48vw;
+	height: 48vw;
+	overflow: visible;
+	fill: #eee;
+}
+.top_row_wrapper {
+	display: flex;
+	align-items: center;
+	margin-bottom: 1vw;
+}
+#chosen {
+	padding: 10px 17px;
+	border-radius: 30px;
+	color: black;
+	margin-right: 1vw;
+}
+.post_date::before {
+	content: "";
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16.2' height='18' viewBox='0 0 16.2 18'%3E%3Cpath d='M9.9,11.1H8.1v1.8H9.9Zm3.6,0H11.7v1.8h1.8Zm3.6,0H15.3v1.8h1.8Zm1.8-6.3H18V3H16.2V4.8H9V3H7.2V4.8H6.3A1.792,1.792,0,0,0,4.509,6.6L4.5,19.2A1.8,1.8,0,0,0,6.3,21H18.9a1.805,1.805,0,0,0,1.8-1.8V6.6A1.805,1.805,0,0,0,18.9,4.8Zm0,14.4H6.3V9.3H18.9Z' transform='translate(-4.5 -3)' fill='%23fff'/%3E%3C/svg%3E");
+	padding: 8px;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: contain;
+	margin-right: 8px;
+}
+.post_reading_time {
+	padding-left: 10px;
+}
+.post_reading_time::before {
+	content: "";
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20'%3E%3Cg transform='translate(-2 -2)'%3E%3Cpath d='M21,12a9,9,0,1,1-9-9,9,9,0,0,1,9,9Z' fill='%23fff' stroke='%23000' stroke-linecap='round' stroke-linejoin='round' stroke-width='2'/%3E%3Cpath d='M18,9v5.4l3.6,1.8' transform='translate(-6 -2.4)' fill='%23fff' stroke='%23000' stroke-linecap='round' stroke-linejoin='round' stroke-width='2'/%3E%3C/g%3E%3C/svg%3E");
+	padding: 10px;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: contain;
+	margin-right: 5px;
+}
+.bottom_row_wrapper {
+	margin-top: 2.5vw;
+}
+@keyframes rotateplanet {
+	100% {transform: rotate(360deg);}
+}
+@media all and (max-width: 576px) {
+	.sciencemag__hero__wrapper {min-height: calc(80vh - 70px);}
+	.sciencemag__post__planet:hover {transform: none;}
+	.sciencemag__post__planet svg {display: none;}
+	.sciencemag__wrapper__title {margin-right: 20px;}
+	.sciencemag__wrapper__title h2 {margin-left: 6vw;font-size: 8vw;}
+	.sciencemag__wrapper__title h4 {font-size: 5vw;}
+	.sciencemag__wrapper__title p {margin: 12px 0 20px 0;}
+	#chosen {display: none;}
+}
+@media all and (min-width: 1045px) {
+	#sciencemag_particles {height: 230vw;}
+	.sciencemag__hero__wrapper {
+	  display: grid;
+	  grid-template-columns: 45% 55%;
+	  min-height: calc(100vh - 70px);
+	}
+	.hero__text {
+		order: -1 !important;
+		-webkit-order: -1 !important;
+		margin-left: 0;
+	}
+	.sciencemag__post__planet {
+		order: 2 !important;
+		-webkit-order: 2 !important;
+	  width: 40vw;
+	  height: 40vw;
+	  border: 1.6vw solid;
+	  left: 50%;
+	  top: 50%;
+	  transform: translate(-50%, -50%);
+		margin-top: 0;
+		margin-left: 0;
+	}
+	.top_row_wrapper {
+		float: none;
+	}
+	.bottom_row_wrapper {
+		float: none;
+	}
+	.sciencemag__post__planet:hover {
+	  transform: translate(-50%, -50%) scale(1.03);
+	}
+	.sciencemag__post__planet:hover > svg {
+		opacity: 1;
+		visibility: visible;
+	}
+	.sciencemag__post__feat__image {
+	  width: 30vw;
+	  height: 30vw;
+		left: 5vw;
+		top: 5vw;
+	}
+	.sciencemag__post__feat__image img {
+		width: 30vw;
+		height: 30vw;
+	}
+	.sciencemag__wrapper__title {
+	  position: absolute;
+	  top: 50%;
+	  transform: translateY(-50%);
+	  margin-left: 40px;
+		margin-right: 0;
+	  position: relative;
+	}
+	.sciencemag__wrapper__title h2 {
+	  font-size: 3.5vw;
+		text-align: left;
+		float: none;
+	}
+	.sciencemag__wrapper__title p {
+		text-align: left;
+		margin-left:0;
+		max-height: 72px;
+		-webkit-line-clamp: 3;
+		float: none;
+	}
+	.sciencemag__wrapper__title h4 {
+	  font-size: 1.5vw;
+		text-align: left;
+	}
+	.sciencemag__wrapper__title h6 {
+	  font-size: 1vw;
+	  margin-left: 0.8vw;
+		float: none;
+	}
+	.sciencemag__wrapper__scroller {
+		display: block;
+	  position: fixed;
+	  bottom: 50px;
+	  left: 50px;
+	  z-index: 5;
+		transition: 0.5s;
+	}
+	.sciencemag__post__planet svg {
+		top: 3.5vw;
+		left: 3.5vw;
+		animation: rotateplanet 10s linear infinite;
+		width: 33vw;
+		height: 33vw;
+		opacity: 0;
+		visibility: hidden;
+	}
+}
+
+/*--------------------------------------------------------------
+# TEMPLATE FOR LEFT AND RIGHT ALIGNED POSTS BELOW HERO
+--------------------------------------------------------------*/
+
+.sciencemag__extraposts__wrapper {
+	display: grid;
+	position: relative;
+	margin-top: 8vw;
+	margin-right: 3vw;
+}
+.extraposts__planet {
+	float: right;
+	margin-right: 4vw;
+}
+.planet__rightaligned {
+	float: none;
+	order: -1;
+	-webkit-order: -1;
+}
+.extraposts__title {
+	margin-left: 4vw;
+	position: relative;
+}
+.extraposts__title h2 {
+	text-align: left;
+	/* These are technically the same, but use both */
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+
+  -ms-word-break: break-all;
+  /* This is the dangerous one in WebKit, as it breaks things wherever */
+  word-break: break-all;
+  /* Instead use this non-standard one: */
+  word-break: break-word;
+}
+.extraposts__title h4 {
+	display: inline-block;
+	margin-bottom: 0.4vw;
+}
+.extraposts__title h6 {
+	float: none;
+	margin-top: 1vw;
+}
+.extraposts__text {
+	order: 2;
+	-webkit-order: 2;
+}
+.extraposts__wrapper__rightaligned {
+	margin-right: 0;
+	margin-left: 3vw;
+}
+.extraposts__title__rightaligned {
+	margin-right: 4vw;
+}
+.extraposts__title__rightaligned h2 {
+	text-align: right;
+	float: right;
+}
+.extraposts__headercontainer {
+	float: right;
+	width: 100%;
+}
+.extraposts__headercontainer h4 {
+	width: 100%;
+	text-align: right;
+}
+.extraposts__title p {
+	margin-left: 0;
+	margin-right: 30vw;
+	text-align: left;
+	max-height: 48px;
+	-webkit-line-clamp: 2;
+}
+.extraposts__title__rightaligned p {
+	float: right;
+	text-align: right;
+	margin-right: 0;
+	margin-left: 30vw;
+}
+.extraposts__title .bottom_row_wrapper {
+	float: none;
+}
+.extraposts__title__rightaligned .bottom_row_wrapper {
+	float: right;
+}
+
+@media all and (max-width: 576px) {
+	.extraposts__title h5 {display: none;}
+	.extraposts__title h2 {margin-left: 0;}
+	.extraposts__title p {margin: 12px 0 20px 0;}
+	.extraposts__title__rightaligned p {margin: 12px 0 20px 0;}
+	.sciencemag__extraposts__wrapper {margin-top: 20vw;}
+}
+@media all and (min-width: 1045px) {
+	.extraposts__text {
+		order: -1;
+		-webkit-order: -1;
+	}
+	.planet__rightaligned {
+		order: 2;
+		-webkit-order: 2;
+	}
+	.sciencemag__extraposts__wrapper {
+		grid-template-columns: 38% 62%;
+		margin-top: 5vw;
+	}
+	.extraposts__wrapper__rightaligned {
+		grid-template-columns: 62% 38%;
+	}
+	.extraposts__planet {
+		float: none;
+		margin: 0;
+		width: 26vw;
+		height: 26vw;
+		border: 1.1vw solid #FF4907;
+	}
+	.extraposts__feat__image {
+	  width: 20vw;
+	  height: 20vw;
+	  left: 3vw;
+	  top: 3vw;
+	}
+	.extraposts__feat__image img {
+		width: 20vw;
+		height: 20vw;
+	}
+	.extraposts__planet svg {
+		position: absolute;
+		top: 2vw;
+		left: 2vw;
+	  transform-origin: center center;
+		animation: rotateplanet 10s linear infinite;
+		width: 22vw;
+		height: 22vw;
+		overflow: visible;
+		fill: #eee;
+		opacity: 0;
+		visibility: hidden;
+	}
+	.extraposts__title {
+		margin: 5px;
+	}
+	.extraposts__title h2 {
+		font-size: 2.8vw;
+		line-height: 1.5;
+		width: 100%;
+	}
+	.extraposts__title p {
+	  max-height: 48px;
+	  -webkit-line-clamp: 2;
+	  margin: 12px 0;
+	  padding-right: 10vw;
+	}
+	.extraposts__title__rightaligned p {
+		text-align: right;
+		padding-left: 10vw;
+		padding-right: 0;
+	}
+	.extraposts__title h4 {
+		display: inline-block;
+		font-size: 1.7vw;
+		margin-bottom: 0.4vw;
+	}
+	.extraposts__title h6 {
+		font-size: 0.9vw;
+	}
+	.extraposts__title__rightaligned {
+		text-align: right;
+		margin-right: 0;
+	}
+	.extraposts__title__rightaligned h2 {
+		float: none;
+		display: inline-block;
+	}
+	.extraposts__footercontainer h6 {
+		margin: 0;
+		margin-right: 0.7vw;
+	}
+	.extraposts__headercontainer h5 {
+		margin: 0;
+		margin-right: 1vw;
+	}
+	.extraposts__footercontainer {
+		float: none;
+	}
+	.extraposts__headercontainer {
+		float: none;
+	}
+}
+
+
+/*--------------------------------------------------------------
+# PREFOOTER WITH DONATE AND ABOUTUS
+--------------------------------------------------------------*/
+.sciencemag__prefooter {
+	z-index: 5;
+	display: grid;
+	grid-template-columns: 50% 50%;
+	position: relative;
+	margin-top: 10vw;
+}
+.sciencemag__prefooter div h4 {
+	font-weight: 500;
+	text-align: center;
+	font-size: 2.5vw;
+	line-height: 1.3;
+	margin: 6vw 13vw 1.5vw 13vw;
+}
+.sciencemag__prefooter div a {
+	width: 10vw;
+	height: 10vw;
+	border-radius: 100%;
+	font-weight: 700;
+	color: white;
+	font-size: 1.3vw;
+	display: inline-block;
+	line-height: 10vw;
+	text-decoration: none;
+}
+.prefooter__aboutus {
+	height: 30vw;
+	background-color: rgba(255,255,255,0.03);
+	position: relative;
+	text-align: center;
+}
+.prefooter__aboutus a {
+	background: linear-gradient(#019F87, #01689f);
+	transition: 0.3s;
+}
+.prefooter__aboutus a:hover {
+	transform: scale(1.05);
+}
+.prefooter__donate {
+	height: 30vw;
+	background-color: rgba(255,255,255,0.08);
+	position: relative;
+	text-align: center;
+}
+.prefooter__donate a {
+	background: linear-gradient(#8200CC, #1c00cc);
+	transition: 0.3s;
+	cursor: pointer;
+}
+.prefooter__donate a:hover {
+	transform: scale(1.05);
+}
+
+@media all and (max-width: 1045px) {
+	.sciencemag__prefooter {display: none;}
+}
+
+/*--------------------------------------------------------------
+# NEWSLETTER SIGNUP IN FOOTER
+--------------------------------------------------------------*/
+
+.site-footer {
+	z-index: 5;
+	position: relative;
+	margin-top: 20vw;
+}
+.sciencemag__newsletter__wrap {
+	display: grid;
+	height: auto;
+	position: relative;
+}
+.newsletter__title {
+	background-color: #EAEAEA;
+	position: relative;
+	height: 35vw;
+}
+.newsletter__title h4 {
+	font-weight: 500;
+	font-size: 3.4vw;
+	color: #202020;
+	margin: 0;
+}
+.newsletter__title h3 {
+	font-weight: 500;
+	font-size: 6.7vw;
+	color: black;
+	margin: 0;
+	margin-top: 0.5vw;
+}
+.newsletter__title div {
+	position: absolute;
+	display: block;
+	min-width: 88vw;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+}
+.newsletter__signup {
+	position: relative;
+	height: 35vw;
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+.newsletter__form {
+	position: absolute;
+	display: block;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+}
+.newsletter__form a {
+	padding: 20px 30px;
+	border-radius: 50px;
+	background: linear-gradient(-45deg,#803397,#833e9b,#704e97,#605d92,#4b7195,#257f93,#019f87);
+	transition: 0.3s;
+}
+.newsletter__form a:hover {
+	filter: brightness(1.1);
+}
+
+@media all and (min-width: 1045px) {
+	.site-footer {
+		margin-top: 0;
+	}
+	.sciencemag__newsletter__wrap {
+		grid-template-columns: 53% 47%;
+		height: 20vw;
+	}
+	.newsletter__title {
+		height: auto;
+	}
+	.newsletter__title h4 {
+		font-size: 1.3vw;
+	}
+	.newsletter__title h3 {
+		font-size: 2.6vw;
+	}
+	.newsletter__title div {
+		min-width: 40vw;
+	}
+	.newsletter__signup {
+		height: auto;
+	}
+}
+@media all and (max-width: 1045px) and (min-width: 770px) {
+	.site-footer {margin-top: 12vw;}
+	.sciencemag__newsletter__wrap {height: 25vw;grid-template-columns: 53% 47%;}
+	.newsletter__title {height: auto;}
+	.newsletter__title h3 {font-size: 3.6vw;}
+	.newsletter__title h4 {font-size: 1.7vw;}
+	.newsletter__title div {min-width: 45vw;}
+	.newsletter__signup {background-color: #EAEAEA;height: auto;}
+}
+@media all and (max-width: 768px) {
+	.newsletter__title {height: 50vw;}
+	.newsletter__title h3 {font-size: 8vw;}
+	.newsletter__title h4 {font-size: 4.5vw;}
+	.newsletter__signup {height: 50vw;}
+}
+
+/*--------------------------------------------------------------
+# FOOTER
+--------------------------------------------------------------*/
+
+.sciencemag__footer__wrap {
+	background-color: black;
+	position: relative;
+	z-index: 5;
+	display: flex;
+	justify-content: center;
+}
+.sciencemag__footer {
+	display: grid;
+	width: 88vw;
+	padding-top: 6vw;
+	padding-bottom: 6vw;
+}
+.sciencemag__footer h5 {
+	font-weight: 500;
+	font-size: 4.5vw;
+	margin: 7vw 0 3vw 0;
+}
+.sciencemag__footer ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+.sciencemag__footer ul li a {
+	display: block;
+	text-decoration: none;
+	color: #A2A2A2;
+	font-size: 4.2vw;
+	transition: 0.2s;
+	cursor: pointer;
+	margin: 4px 0;
+	padding: 6px 0;
+}
+.sciencemag__footer ul li a span {
+	margin-left: 6vw;
+}
+.sciencemag__footer ul li a:hover {
+	color: #707070;
+}
+.footer__logo p {
+	color: white;
+	line-height: 1.6;
+	font-size: 4vw;
+}
+.footer__logo hr {
+	display: inline-block;
+	color: white;
+	background-color: white;
+	border: 0.5vw solid white;
+	width: 20vw;
+}
+.footer__branding {
+	display: none;
+}
+.footer__branding a {
+	color: white;
+	text-decoration: none;
+}
+.footer__branding span {
+	font-size: 2.9vw;
+	margin-left: 4vw;
+}
+.site-title-footer {
+	display: block;
+	font-weight: 500;
+	text-transform: lowercase;
+	font-size: 10vw !important;
+	margin: 0 !important;
+	margin-bottom: -1.8vw !important;
+	padding: 0 !important;
+	color: white !important;
+}
+.footer__logo {
+	margin-top: 8vw;
+}
+.footer__logo, .footer__contact, .footer__categories, .footer__links {}
+.footer__logo {
+	order: 4;
+	-webkit-order: 4;
+}
+.footer__contact {
+	order: 3;
+	-webkit-order: 3;
+}
+.footer__categories {
+	order: 2;
+	-webkit-order: 2;
+}
+.footer__categories__list .menu-item {
+	display: contents;
+}
+.footer__links {
+	order: 1;
+	-webkit-order: 1;
+}
+
+@media all and (min-width: 1045px) {
+	.sciencemag__footer__wrap {}
+	.sciencemag__footer {
+		grid-template-columns: 31% 23% 23% 23%;
+		grid-column-gap: 1vw;
+		max-width: 85vw;
+		width: auto;
+		padding-top: 0;
+		padding-bottom: 0;
+	}
+	.sciencemag__footer h5 {
+		font-size: 1.1vw;
+		margin: 1vw 0;
+	}
+	.sciencemag__footer ul li a {
+		text-decoration: none;
+		color: #A2A2A2;
+		font-size: 1vw;
+		transition: 0.2s;
+		cursor: pointer;
+		line-height: 2.4;
+		margin: 0;
+		padding: 0;
+	}
+	.sciencemag__footer ul li a span {
+		margin-left: 1.4vw;
+	}
+	.footer__logo hr {
+		color: white;
+		border: 0.14vw solid white;
+		width: 8vw;
+		margin: 0;
+	}
+	.footer__logo p {
+		color: #A2A2A2;
+		font-size: 0.92vw;
+		display: block;
+	}
+	.footer__branding {
+		display: block;
+		padding: 0 !important;
+		margin-bottom: 1vw !important;
+	}
+	.footer__branding span {
+		font-size: 1.02vw;
+		margin-left: 1.6vw;
+	}
+	.site-title-footer {
+		font-size: 3.5vw !important;
+		margin-bottom: -0.5vw !important;
+	}
+	.footer__logo {
+		margin-left: 4vw;
+		margin-top: 0;
+		order: 1;
+		-webkit-order: 1;
+	}
+	.footer__logo, .footer__contact, .footer__categories, .footer__links {
+		padding: 5vw 0;
+	}
+	.footer__contact {
+		order: 2;
+		-webkit-order: 2;
+	}
+	.footer__categories {
+		order: 3;
+		-webkit-order: 3;
+	}
+	.footer__links {
+		order: 4;
+		-webkit-order: 4;
+	}
+}
+
+
+/*--------------------------------------------------------------
+# POSTFOOTER
+--------------------------------------------------------------*/
+.sciencemag__site__info {
+	position: relative;
+	background: #080808;
+	padding: 4vw 0;
+}
+.sciencemag__site__info span {
+	font-size: 3vw;
+	font-weight: 400;
+	color: #6C6C6C;
+	display: inline-block;
+	padding: 1.2vw 0;
+	text-align: center;
+	width: 100%;
+}
+.site__info__credit a {
+	text-decoration: none;
+	color: #6C6C6C;
+}
+@media all and (max-width: 1045px) {
+	.site__info__fun {
+		display: none !important;
+	}
+}
+@media all and (min-width: 1045px) {
+	.sciencemag__site__info {
+		padding: 0;
+	}
+	.sciencemag__site__info span {
+		font-size: 1vw;
+		padding: 2vw 0;
+		width: auto;
+	}
+	.site__info__credit {
+		float: right;
+		margin-right: 3vw;
+	}
+	.site__info__fun {
+		position: absolute;
+		left: 50%;
+		transform: translateX(-50%);
+	}
+	.site__info__copyright {
+		margin-left: 3vw;
+	}
+}
+
+/*--------------------------------------------------------------
+# TEMPLATE PART SHORTPOST
+--------------------------------------------------------------*/
+.authorpost__outerwrapper {
+  position: relative;
+  margin-top: 2vw;
+}
+.authorpost__category {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 2vw;
+  z-index: 800;
+  border-radius: 20px;
+}
+.authorpost__category h4 {
+  color: black;
+  font-weight: 400;
+  opacity: 0.7;
+  margin: 0;
+  padding: 7px 12px;
+}
+.authorpost__wrapper {
+  background-color: #141414;
+  position: relative;
+  top: 1vw;
+  border-radius: 5px;
+  display: grid;
+  grid-template-columns: 88% 12%;
+}
+.authorpost__info {
+  padding: 30px 23px;
+  padding-right: 0;
+}
+.authorpost__info a {
+  text-decoration: none;
+  color: inherit;
+}
+.authorpost__info h2 {
+  font-weight: 400;
+  font-size: 2.2vw;
+  margin: 0;
+  width: 81vw;
+  height: 2.6vw;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.authorpost__info p {
+  margin: 0;
+  padding: 0;
+  color: #3B3A3A;
+  margin-top: 0.5vw;
+	font-weight: 400;
+  font-size: 1.1vw;
+  height: 2.4vw;
+  width: 81vw;
+  overflow: hidden;
+}
+.authorpost__link {
+  margin: 30px 23px;
+  margin-left: 0;
+}
+.authorpost__link a {
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  display: block;
+  color: black;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 1.3vw;
+  line-height: 4.27;
+  text-align: center;
+  transition: 0.3s;
+}
+.authorpost__link a:hover {
+  background-color: #DDDDDD;
+}
+@media all and (min-width: 1700px) {
+	.authorpost__category {
+		border-radius: 20px;
+	}
+	.authorpost__category h4 {
+		font-size: 1vw;
+		padding: 0.3vw 0.8vw;
+	}
+}
+@media all and (max-width: 830px) {
+  .authorpost__outerwrapper {
+    margin-top: 3.5vw;
+  }
+  .authorpost__wrapper {
+    grid-template-columns: 85% 15%;
+  }
+  .authorpost__info h2 {
+    font-size: 3vw;
+    width: 76.6vw;
+    height: 3.6vw;
+  }
+  .authorpost__info p {
+    margin-top: 0.8vw;
+    font-size: 1.4vw;
+    height: 3.1vw;
+    width: 76.6vw;
+  }
+  .authorpost__link a {
+    font-size: 1.7vw;
+  }
+}
+@media all and (max-width: 780px) {
+  .authorpost__wrapper {
+    grid-template-columns: 82% 18%;
+  }
+  .authorpost__info h2 {
+    font-size: 3.5vw;
+    width: 73vw;
+    height: 4.2vw;
+  }
+  .authorpost__info p {
+    margin-top: 0.8vw;
+    font-size: 1.6vw;
+    height: 3.65vw;
+    width: 73vw;
+  }
+  .authorpost__link a {
+    font-size: 2vw;
+  }
+}
+@media all and (max-width: 620px) {
+  .authorpost__wrapper {
+    grid-template-columns: 78% 22%;
+  }
+  .authorpost__info h2 {
+    font-size: 4vw;
+    width: 67vw;
+    height: 4.8vw;
+  }
+  .authorpost__info p {
+    font-size: 1.8vw;
+    height: 3.95vw;
+    width: 67vw;
+  }
+  .authorpost__link a {
+    font-size: 2.3vw;
+  }
+}
+@media all and (max-width: 576px) {
+  .authorpost__outerwrapper {
+    margin-top: 8vw;
+  }
+  .authorpost__wrapper {
+    top: 18px;
+    grid-template-columns: none;
+  }
+  .authorpost__info {
+    padding-right: 23px;
+  }
+  .authorpost__info h2 {
+    font-size: 7vw;
+    width: calc(94vw - 46px);
+    white-space: normal;
+    height: 16vw;
+  }
+  .authorpost__info p {
+    font-size: 3.5vw;
+    height: 11.4vw;
+    width: calc(94vw - 46px);
+  }
+  .authorpost__link {
+    display: none;
+    margin-left: 23px;
+  }
+  .authorpost__link a {
+    font-size: 4vw;
+    height: auto;
+    line-height: 3;
+  }
+}
+
+/*--------------------------------------------------------------
+# AJAX LOADMORE BUTTON FOR WEBSITE
+--------------------------------------------------------------*/
+.sciencemag__ajax__loadmore {
+  position: relative;
+  display: inline-block;
+  padding: 20px 40px;
+  margin-top: 40px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+	border: 5px solid white;
+    border-image-slice: 1;
+	background: linear-gradient(45deg,black,black,black,black,#f1f1f1,black,black,black);
+	background-position: bottom left;
+	background-size: 400%;
+}
+@keyframes flare {
+	from {background-position: bottom left;}
+	to {background-position: top right;}
+}
+.sciencemag__ajax__loadmore:hover {
+  animation: flare 3s infinite ;
+  transform: scale(1.01);
+}
+.loadmore__designtwo {
+	text-align: center;
+	text-transform: uppercase;
+	display: block;
+	margin: 70px 4vw -40px 4vw;
+}
+
+/*--------------------------------------------------------------
+# MODAL POPUP FOR NEWSLETTER REGISTRATION
+--------------------------------------------------------------*/
+
+.sciencemag__newsletter__modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 100; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+	min-height: 550px;
+}
+
+/* Modal Content/Box */
+.modal__body {
+  background-color: black;
+  position: fixed;
+	left: 50%;
+	top: 60%;
+	transform: translate(-50%, -60%);
+  width: 600px; /* Could be more or less, depending on screen size */
+	-webkit-box-shadow: 0px 0px 100px 0px white;
+	-moz-box-shadow: 0px 0px 100px 0px white;
+	box-shadow: 0px 0px 100px 0px white;
+	display: grid;
+	grid-template-columns: 50% 50%;
+}
+.modal__image {
+	display: block;
+	position: relative;
+	background-position: right;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+.modal__text {
+	position: relative;
+	padding: 20px;
+}
+.modal__close {
+	background-color: #202020;
+	position: absolute;
+	top: 0;
+	right: 0;
+	border: 0;
+	height: 50px;
+	width: 50px;
+	border-radius: 100%;
+	margin-right: -25px;
+	margin-top: -25px;
+	cursor: pointer;
+}
+.modal__close:hover > hr {
+	color: white;
+}
+.modal__close:focus {
+	background-color: #292929;
+	outline: none;
+}
+.modal__close hr {
+	transform: rotate(-45deg);
+	width: 18px;
+	top: 15px;
+	left: 15px;
+	border-style: solid;
+	color: grey;
+	position: absolute;
+}
+.modal__close hr:first-child {
+	transform: rotate(45deg);
+}
+.modal__text__header {
+	position: relative;
+}
+.modal__text__header span:last-child {
+	display: block;
+	margin-top: 15px;
+	font-size: 13px;
+	color: #858585;
+}
+.modal__text__header .logo__p {
+	font-size: 40px;
+	font-weight: bold;
+}
+.modal__content {
+	line-height: 1.35;
+	margin: 30px 0;
+}
+.modal__form a {
+	width: 100%;
+	margin: 14px 0;
+	padding: 13px 0;
+	background-color: white;
+	color: black;
+	border: none;
+	font-size: 0.9em;
+	cursor: pointer;
+	text-align: center;
+	display: block;
+}
+.modal__form a:hover {
+	background-color: #e5e5e5;
+}
+@media all and (max-width: 600px) {
+	.modal__body {width: 70vw;}
+}
+@media all and (max-height: 620px) {
+	.modal__body {grid-template-columns: 0 100%;height: 390px;min-height: auto;}
+	.modal__form form input[type="submit"] {margin-bottom: 20px;}
+	.modal__text__header span {display: inline-block;margin-top: 0;}
+	.modal__text__header {margin-top: 0;}
+}
+@media all and (max-height: 530px) {
+	.modal__body {
+		top: 75%;
+		transform: translate(-50%, -75%);
+	}
+}
+@media all and (max-height: 490px) {
+	.sciencemag__newsletter__modal {display: none;}
+}
+
+/*DISPLAYING MODAL SETTINGS */
+.modal__screen__settings {display: none;}
+@media screen and (min-height: 500px) and (min-width:840px) {
+	.modal__screen__settings {display: block;}
+}
+
+/*--------------------------------------------------------------
+# DONATE POPUP
+--------------------------------------------------------------*/
+
+.donation__header span:first-child {
+	font-weight: bold;
+	font-size: 1.2em;
+	margin-bottom: 10px;
+}
+.donation__header span:last-child {
+	color: #656565;
+	font-size: 0.8em;
+	margin-bottom: 5px;
+}
+.sciencemag__donation__modal {
+	display: none;
+	position:fixed;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+	z-index:1000000;
+	background-color: rgba(0,0,0,0.5);
+	min-height: 545px;
+}
+.sciencemag__donation__modal img {
+	width:230px;
+	margin: 15px 0 5px 0;
+	position:relative;
+	left:50%;
+	transform: translateX(-50%);
+	transition: 0.8s;
+}
+.donation__modal__body {
+	position:absolute;
+	background-color: black;
+	left:50%;
+	top:50%;
+	transform:translate(-50%, -50%);
+	padding:30px;
+	border-radius: 20px;
+	width:230px;
+}
+.donation__modal__body span {
+	display: block;
+	text-align: center;
+}
+.donation__footer span {
+	font-size: 0.83em;
+}
+.donation__footer button {
+	cursor: zoom-in;
+	display: block;
+	width: 100%;
+	background-color: #202020;
+	border: none;
+	padding: 8px 0;
+	color: #eee;
+	font-size: 0.8em;
+	border-radius: 10px;
+	margin-bottom: 15px;
+	transition: 0.3s;
+}
+.donation__footer button:focus {
+	outline: none;
+	background-color: #0e0e0e;
+}
+.donation__footer span:last-child {
+	color: #656565;
+	margin-top: 5px;
+	font-size: 0.7em;
+}
+.black__background {background-color: black !important;}
+.black__font {display: none !important;}
