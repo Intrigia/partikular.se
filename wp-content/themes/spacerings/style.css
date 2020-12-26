@@ -483,10 +483,10 @@ a {
 	color: #FF5555 !important;
 }
 .sub-menu .filo a::before {
-	color: #52db38 !important;
+	color: #f73333 !important;
 }
 .sub-menu .psyc a::before {
-	color: #f73333 !important;
+	color: #52db38 !important;
 }
 /*******************************************************************************
 ********************************************************************************
