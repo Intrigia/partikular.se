@@ -9,6 +9,7 @@ wp-content/*
 !wp-content/plugins/
 !wp-content/themes/
 
+wp-content/plugins/capability-manager-enhanced/
 wp-content/plugins/onelogin-saml-sso/
 wp-content/plugins/wps-hide-login/
 wp-content/plugins/wp-smushit/
