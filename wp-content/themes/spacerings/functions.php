@@ -78,7 +78,7 @@ if ( ! function_exists( 'science_mag_setup' ) ) :
 		// Add support for editor styles.
 	  add_theme_support( 'editor-styles' );
 		// Enqueue editor styles.
-		add_editor_style( 'editor-style.css' );
+		add_editor_style( 'css/editor-style.css' );
 
 		/**
 		 * Add support for core custom logo.
@@ -146,20 +146,20 @@ function science_mag_scripts() {
 
 	if ( $issignup == false ) {
 		wp_enqueue_style( 'science-mag-style', get_stylesheet_uri() );
-		wp_enqueue_script( 'science-mag-javascript', get_template_directory_uri() . '/main.js', array(), '', true );
+		wp_enqueue_script( 'science-mag-javascript', get_template_directory_uri() . '/js/main.js', array(), '', true );
 		wp_enqueue_script( 'science-mag-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 		wp_enqueue_style( 'science-mag-google-fonts', 'https://fonts.googleapis.com/css?family=Lato:400,700,900|Poppins:400,500,600,700&display=swap', false );
 		if ( is_page() ) {
-			wp_enqueue_script( 'science-mag-parallax', get_template_directory_uri() . '/parallax.min.js', array(), '', false );
+			wp_enqueue_script( 'science-mag-parallax', get_template_directory_uri() . '/js/parallax.min.js', array(), '', false );
 		}
 	} else {
-		wp_enqueue_style( 'science-mag-signup-style', get_template_directory_uri() . '/signup/signup.css' );
+		wp_enqueue_style( 'science-mag-signup-style', get_template_directory_uri() . '/css/signup.css' );
 	}
 	if ( is_singular() && $issignup == false ) {
-		wp_enqueue_style( 'science-mag-single-style', get_template_directory_uri() . '/single.css' );
+		wp_enqueue_style( 'science-mag-single-style', get_template_directory_uri() . '/css/single.css' );
 	}
 	if ( is_author() ) {
-		wp_enqueue_style( 'science-mag-authorpage-style', get_template_directory_uri() . '/author.css' );
+		wp_enqueue_style( 'science-mag-authorpage-style', get_template_directory_uri() . '/css/author.css' );
 	}
 
 }
@@ -226,7 +226,7 @@ function sciencemag_my_load_more_scripts() {
 			wp_enqueue_script('jquery');
 
 			// register our main script but do not enqueue it yet
-			wp_register_script( 'my_loadmore', get_stylesheet_directory_uri() . '/ajaxloadmore.js', array('jquery') );
+			wp_register_script( 'my_loadmore', get_stylesheet_directory_uri() . '/js/ajaxloadmore.js', array('jquery') );
 
 			// we have to pass parameters to ajaxloadmore.js script but we can get the parameters values only in PHP
 			// you can define variables directly in your HTML but I decided that the most proper way is wp_localize_script()

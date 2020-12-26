@@ -45,7 +45,7 @@ Website developed by Karl Sellergren. Check out my LinkedIn profile: https://www
 	<meta name="msapplication-TileColor" content="#000000">
     <meta name="theme-color" content="#ffffff">
     <style>
-    .partikular__signup__left {background-image: url('<?php echo get_template_directory_uri() . "/signup/signupvector.jpg";?>');}
+    .partikular__signup__left {background-image: url('<?php echo get_template_directory_uri() . "/assets/signupvector.jpg";?>');}
     </style>
 </head>
 <body>
@@ -75,7 +75,7 @@ Website developed by Karl Sellergren. Check out my LinkedIn profile: https://www
             <form action="https://partikular.us5.list-manage.com/subscribe/post?u=6b46285289139ed51ecb621d1&amp;id=d99baed735" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank">
                 <div id="mc_embed_signup_scroll">
                     <div class="partikular__logo__mobile">
-                        <a href="<?php echo home_url();?>"><img src="<?php echo get_template_directory_uri() . '/signup/mobilelogo.gif';?>" alt="Partikular logotyp"  width=200/></a>
+                        <a href="<?php echo home_url();?>"><img src="<?php echo get_template_directory_uri() . '/assets/mobilelogo.gif';?>" alt="Partikular logotyp"  width=200/></a>
                     </div>
                     <h1>Bli medlem i vår ideella förening</h1>
             <div class="mc_embed_page_1">
@@ -155,7 +155,7 @@ Website developed by Karl Sellergren. Check out my LinkedIn profile: https://www
         </div>
         <!--End mc_embed_signup-->
         <div class="successmsg" id="sucmsg" style="display:none;">
-            <img src="<?php echo get_template_directory_uri() . '/icons/waving-hand.svg';?>" width="100">
+            <img src="<?php echo get_template_directory_uri() . '/assets/waving-hand.svg';?>" width="100">
             <h2>Välkommen!</h2>
             <h3>Tack för att du är med och stöttar vår förening.</h3>
             <p>Kontrollera din inkorg, du kommer snart att få ett välkomstmeddelande av oss.</p>
@@ -229,9 +229,9 @@ Website developed by Karl Sellergren. Check out my LinkedIn profile: https://www
             }
         }
     </script>
-    <script type="text/javascript" src="<?php echo get_template_directory_uri() . '/signup/formvalidate.js';?>"></script>
-    <script type="text/javascript" src="<?php echo get_template_directory_uri() . '/particles.js';?>"></script>
-    <script type="text/javascript" src="<?php echo get_template_directory_uri() . '/app.js';?>"></script>
+    <script type="text/javascript" src="<?php echo get_template_directory_uri() . '/js/formvalidate.js';?>"></script>
+    <script type="text/javascript" src="<?php echo get_template_directory_uri() . '/js/particles.js';?>"></script>
+    <script type="text/javascript" src="<?php echo get_template_directory_uri() . '/js/app.js';?>"></script>
     <?php wp_footer(); ?>
 </body>
 </html>

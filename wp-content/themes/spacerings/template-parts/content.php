@@ -77,18 +77,18 @@ $author_id = get_the_author_meta('id')
 	<div class="sciencemag__post__content">
 		<div class="share__wrapper">
 			<div class="share__buttons">
-				<a rel="noreferrer nofollow noopener" data-shared="sharing-facebook-17" href="<?php echo get_permalink() . "?share=facebook&nb=1";?>" target="_blank" title="Klicka för att dela artikeln på Facebook"><div class="button__share share__facebook"><img src="<?php echo get_template_directory_uri() . "/icons/facebook.svg" ?>"/></div></a>
-				<a rel="noreferrer nofollow noopener" data-shared="sharing-twitter-17" href="<?php echo get_permalink() . "?share=twitter&nb=1";?>" target="_blank" title="Klicka för att dela artikeln på Twitter"><div class="button__share share__twitter"><img src="<?php echo get_template_directory_uri() . "/icons/twitter.svg" ?>"/></div></a>
-				<a rel="noreferrer nofollow noopener" data-shared href="<?php echo get_permalink() . "?share=jetpack-whatsapp&nb=1";?>" target="_blank" title="Klicka för att dela artikeln på Whatsapp"><div class="button__share share__facebook"><img src="<?php echo get_template_directory_uri() . "/icons/whatsapp.svg" ?>"/></div></a>
-				<a rel="noreferrer nofollow noopener" data-shared href="<?php echo get_permalink() . "?share=reddit&nb=1";?>" target="_blank" title="Klicka för att dela artikeln på Reddit"><div class="button__share share__facebook"><img src="<?php echo get_template_directory_uri() . "/icons/reddit.svg" ?>"/></div></a>
-				<a onclick="window.print();return false;" value="" title="Skriv ut artikeln"><div class="button__share share__print"><img src="<?php echo get_template_directory_uri() . "/icons/print.svg" ?>"/></div></a>
-				<a onclick="darkmode()" title="Sätt på mörkt läge"><div class="button__share mobile__dark__btn"><img src="<?php echo get_template_directory_uri() . "/icons/lightbulb.svg" ?>" style="height: 6.5vw;"/></div></a>
+				<a rel="noreferrer nofollow noopener" data-shared="sharing-facebook-17" href="<?php echo get_permalink() . "?share=facebook&nb=1";?>" target="_blank" title="Klicka för att dela artikeln på Facebook"><div class="button__share share__facebook"><img src="<?php echo get_template_directory_uri() . "/assets/facebook.svg" ?>"/></div></a>
+				<a rel="noreferrer nofollow noopener" data-shared="sharing-twitter-17" href="<?php echo get_permalink() . "?share=twitter&nb=1";?>" target="_blank" title="Klicka för att dela artikeln på Twitter"><div class="button__share share__twitter"><img src="<?php echo get_template_directory_uri() . "/assets/twitter.svg" ?>"/></div></a>
+				<a rel="noreferrer nofollow noopener" data-shared href="<?php echo get_permalink() . "?share=jetpack-whatsapp&nb=1";?>" target="_blank" title="Klicka för att dela artikeln på Whatsapp"><div class="button__share share__facebook"><img src="<?php echo get_template_directory_uri() . "/assets/whatsapp.svg" ?>"/></div></a>
+				<a rel="noreferrer nofollow noopener" data-shared href="<?php echo get_permalink() . "?share=reddit&nb=1";?>" target="_blank" title="Klicka för att dela artikeln på Reddit"><div class="button__share share__facebook"><img src="<?php echo get_template_directory_uri() . "/assets/reddit.svg" ?>"/></div></a>
+				<a onclick="window.print();return false;" value="" title="Skriv ut artikeln"><div class="button__share share__print"><img src="<?php echo get_template_directory_uri() . "/assets/print.svg" ?>"/></div></a>
+				<a onclick="darkmode()" title="Sätt på mörkt läge"><div class="button__share mobile__dark__btn"><img src="<?php echo get_template_directory_uri() . "/assets/lightbulb.svg" ?>" style="height: 6.5vw;"/></div></a>
 			</div>
 		</div>
 		<div class="darkmode__wrapper">
 			<div class="right__side__buttons">
 				<div class="darkmode__button" onclick="darkmode()">
-				<img src="<?php echo get_template_directory_uri() . "/icons/lightbulb.svg" ?>"/>
+				<img src="<?php echo get_template_directory_uri() . "/assets/lightbulb.svg" ?>"/>
 			  </div>
 				<!--
 				<div class="darkmode__button views__counter">

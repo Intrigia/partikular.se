@@ -71,7 +71,7 @@
 
 <section class="no-results not-found">
 	<div class="page-content">
-		<img src="<?php echo get_template_directory_uri() . "/no-results.png" ?>" class="no-results-drawing"></img>
+		<img src="<?php echo get_template_directory_uri() . "/assets/no-results.png" ?>" class="no-results-drawing"></img>
 		<span id="no-results-span-message"><?php esc_html_e( 'Hoppsan! Inga artiklar hittades!', 'science-mag' ); ?></span>
 		<?php if ( is_home() ): ?>
 

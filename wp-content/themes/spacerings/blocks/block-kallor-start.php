@@ -21,7 +21,7 @@
 		}
 		.wp-citation-start summary:focus {outline: none;}
 		.wp-citation-start summary::-webkit-details-marker {
-			background: url("/wp-content/themes/spacerings/icons/bookmark.svg");
+			background: url("/wp-content/themes/spacerings/assets/bookmark.svg");
 			background-size: contain;
 			background-repeat: no-repeat;
 			color: transparent;

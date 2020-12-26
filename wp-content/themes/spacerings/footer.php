@@ -18,7 +18,7 @@
 					<h3>Nu kan du bli medlem i vår ideella förening.</h3>
 			  </div>
 			</div>
-			<div class="newsletter__signup" style="background-image: url('<?php echo get_template_directory_uri() . '/becomemember.png';?>');"</div>
+			<div class="newsletter__signup" style="background-image: url('<?php echo get_template_directory_uri() . '/assets/becomemember.png';?>');"</div>
 				<div class="newsletter__form">
 			  	<a href="/bli-medlem">Bli medlem &#8594;</a>
 			  </div>
@@ -84,7 +84,7 @@
 </div><!-- #page -->
 <div class="sciencemag__newsletter__modal" id="nyhetsbrev__modal">
 	<div class="modal__body">
-		<div class="modal__image" style="background-image:url('<?php echo get_template_directory_uri() . '/enheter.jpg';?>');"></div>
+		<div class="modal__image" style="background-image:url('<?php echo get_template_directory_uri() . '/assets/enheter.jpg';?>');"></div>
 		<div class="modal__text">
 			<div class="modal__text__header">
 				<span class="logo__p">p</span>
@@ -111,7 +111,7 @@
 			<span>Donera till Partikular</span>
 			<span>Skanna koden nedan med hjälp av<br>Swish för att donera ett<br>valfritt belopp.</span>
 		</div>
-		<img src="<?php echo get_template_directory_uri() . '/qrcode.png';?>" id="swishqrcode">
+		<img src="<?php echo get_template_directory_uri() . '/assets/qrcode.png';?>" id="swishqrcode">
 		<div class="donation__footer">
 			<button onclick="zoomin(this)">Förstora</button>
 			<span>Referensnummer: 5219930281</span>
@@ -123,8 +123,8 @@
 		</button>
 	</div>
 </div>
-<script type="text/javascript" src="<?php echo get_template_directory_uri() . '/particles.js';?>"></script>
-<script type="text/javascript" src="<?php echo get_template_directory_uri() . '/app.js';?>"></script>
+<script type="text/javascript" src="<?php echo get_template_directory_uri() . '/js/particles.js';?>"></script>
+<script type="text/javascript" src="<?php echo get_template_directory_uri() . '/js/app.js';?>"></script>
 <?php wp_footer(); ?>
 
 </body>

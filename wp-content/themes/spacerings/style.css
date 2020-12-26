@@ -1,22 +1,18 @@
 @charset "UTF-8";
 /*
 Theme Name: Space Rings
-Theme URI: https://karlochanton.se
+Theme URI: https://www.partikular.se
 Author: Karl Sellergren
 Author URI: https://www.linkedin.com/in/karlsellergren
-Description: A custom designed theme used for the website 'partikular.se'. Advanced hover designs, responsive layout with CSS grid. Enjoy!
+Description: Custom made theme with basic magazine functionality.
 Requires at least: WordPress 4.9.6
 Version: 1.4
 License: GNU General Public License v2 or later
 License URI: LICENSE
-Text Domain: sciencemag
-Tags: one-column, flexible-header, accessibility-ready, custom-colors, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, rtl-language-support, sticky-post, threaded-comments, translation-ready
+Text Domain: spacerings
 
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
-
-Science Mag is based on Underscores https://underscores.me/, (C) 2012-2018 Automattic, Inc.
-Underscores is distributed under the terms of the GNU GPL v2 or later.
 */
 html {
 	line-height: 1.15; /* 1 */
