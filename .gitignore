@@ -9,7 +9,7 @@ wp-content/*
 !wp-content/plugins/
 !wp-content/themes/
 
-wp-content/plugins/wps-hide-login/
+wp-content/plugins/onelogin-saml-sso/
 wp-content/plugins/wps-hide-login/
 wp-content/plugins/wp-smushit/
 wp-content/plugins/wordpress-seo/
