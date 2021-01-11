@@ -59,7 +59,6 @@ $author_id = get_the_author_meta('id')
 		    	the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
     		endif;
     		?>
-    		<h5><?php echo 'publicerad ' . human_time_diff(get_the_time('U'), current_time('timestamp')) . ' sedan av'; ?></h5>
 	    	<a href="<?php echo get_author_posts_url($author_id) ?>">
 	    	<div class="hero__author">
 	    		<div class="author__image" style="background-image: url('<?php echo get_avatar_url($author_id) ?>');"></div>
@@ -134,6 +133,7 @@ $author_id = get_the_author_meta('id')
 					<div class="author__bigimage" style="background-image: url('<?php echo get_avatar_url($author_id, ['size' => '350']); ?>');"></div>
 					<div class="about__author__text">
 						<h3><?php the_author(); ?></h3>
+						<?php the_date( 'Y-m-d', '<h5>', '</h5>' ); ?>
 						<p>Favoritkategori:<br/><?php echo get_the_author_meta('favorite'); ?></p>
 						<a href="<?php echo get_author_posts_url($author_id) ?>">Läs mer</a>
 					</div>

@@ -46,8 +46,17 @@ $rgb_categorycolour =  $r . "," . $g . "," . $b;
           <?php the_excerpt(); ?>
         </a>
         <div class="bottom_row_wrapper">
-          <span class="post_date"><?php echo get_the_date('Y-m-d'); ?></span>
           <span class="post_reading_time"><?php echo reading_time(); ?></span>
+          <?php
+								$attachments = get_children(
+									array(
+									'post_type' => 'attachment',
+									'post_mime_type' => 'image',
+									'post_parent' => $post->ID
+									));
+								if(count($attachments) > 2) { ?>
+									<span class="post_has_images">Innehåller bilder</span>
+					<?php } ?>
         </div>
       </div><!-- .sciencemag__extraposts__title -->
     </div>

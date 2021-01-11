@@ -54,6 +54,7 @@
 }
 .post__hero__text h1 {
   margin: 0;
+  margin-bottom: 0.5em;
   font-weight: 900;
   font-size: 8vw;
   line-height: 1.3;
@@ -400,6 +401,14 @@ blockquote cite {
   margin: 0;
   font-weight: 900;
 }
+.about__author__text h5 {
+  font-size: 3vw;
+  font-weight: 400;
+  color: #AAA;
+  line-height: 1.2;
+  margin: 10px 0;
+  font-weight: 900;
+}
 .about__author__text p {
   display: none;
 }
@@ -591,6 +600,9 @@ blockquote cite {
   }
   .about__author__text h3 {
     font-size: 2.5vw;
+  }
+  .about__author__text h5 {
+    font-size: 1.1vw;
   }
   .about__author__text p {
     display: block;
