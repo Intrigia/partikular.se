@@ -33,9 +33,6 @@ $author_id = get_the_author_meta('id')
   background-position: 0 88%;
   transition: background-size 0.25s ease-in;
 }
-.sciencemag__post__content__dark .entry-content a {
-	color: white;
-}
 .sciencemag__post__content .entry-content a:hover {
     background-size: 100% 88%;
 }
@@ -81,19 +78,6 @@ $author_id = get_the_author_meta('id')
 				<a rel="noreferrer nofollow noopener" data-shared href="<?php echo get_permalink() . "?share=jetpack-whatsapp&nb=1";?>" target="_blank" title="Klicka för att dela artikeln på Whatsapp"><div class="button__share share__facebook"><img src="<?php echo get_template_directory_uri() . "/assets/whatsapp.svg" ?>"/></div></a>
 				<a rel="noreferrer nofollow noopener" data-shared href="<?php echo get_permalink() . "?share=reddit&nb=1";?>" target="_blank" title="Klicka för att dela artikeln på Reddit"><div class="button__share share__facebook"><img src="<?php echo get_template_directory_uri() . "/assets/reddit.svg" ?>"/></div></a>
 				<a onclick="window.print();return false;" value="" title="Skriv ut artikeln"><div class="button__share share__print"><img src="<?php echo get_template_directory_uri() . "/assets/print.svg" ?>"/></div></a>
-				<a onclick="darkmode()" title="Sätt på mörkt läge"><div class="button__share mobile__dark__btn"><img src="<?php echo get_template_directory_uri() . "/assets/lightbulb.svg" ?>" style="height: 6.5vw;"/></div></a>
-			</div>
-		</div>
-		<div class="darkmode__wrapper">
-			<div class="right__side__buttons">
-				<div class="darkmode__button" onclick="darkmode()">
-				<img src="<?php echo get_template_directory_uri() . "/assets/lightbulb.svg" ?>"/>
-			  </div>
-				<!--
-				<div class="darkmode__button views__counter">
-					<span><?php echo do_shortcode( '[views]' ); ?></span>
-				</div>
-				-->
 			</div>
 		</div>
 	  <div class="entry-content">

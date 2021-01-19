@@ -1,0 +1,179 @@
+.content {
+    margin-top: 70px;
+    background: linear-gradient(45deg, #00D6B2, #00D647);
+    overflow: auto;
+    box-sizing: content-box;
+    text-align: center;
+    font-family: 'Lato', Arial, Helvetica, sans-serif;
+}
+
+.row {
+    color: white;
+    max-width: 800px;
+    margin: 50px auto;
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.col {
+    background: black;
+    border-radius: 20px;
+    padding: 40px;
+    margin: 15px;
+    position: relative;
+}
+
+#donate-form .amounts {
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
+#donate-form a {
+    display: block;
+    background: linear-gradient(45deg, #00D6B2, #00D647);
+    border: 3px solid #00D6B2;
+    padding: 14px;
+    margin: 3px;
+    transition: 0.3s;
+    cursor: pointer;
+    color: black;
+    font-weight: bold;
+    font-size: 1.1em;
+    position: relative;
+}
+
+#donate-form .amounts div {
+    display: block;
+    background: linear-gradient(45deg, #00D6B2, #00D647);
+    border: 3px solid #00D6B2;
+    padding: 14px;
+    margin: 3px;
+    transition: 0.3s;
+    color: black;
+    font-weight: bold;
+    font-size: 1.1em;
+    position: relative;
+    cursor: pointer;
+}
+
+#donate-form a:hover,
+#donate-form .amounts div:hover {
+    filter: hue-rotate(90deg);
+    transition: 0.3s;
+}
+
+#donate-form #custom {
+    background: transparent;
+    border: none;
+    width: 40px;
+    outline: none;
+    border-bottom: 2px solid black;
+    margin-right: 3px;
+    font-weight: bold;
+    height: 1.1em;
+    cursor: pointer;
+}
+
+.selected:hover {
+    filter: none !important;
+}
+
+.selected::after {
+    content: "\2713";
+    font-size: 13px;
+    text-align: center;
+    line-height: 1.5;
+    width: 20px;
+    height: 20px;
+    border-radius: 100%;
+    background: #fff;
+    position: absolute;
+    top: -7px;
+    right: -7px;
+}
+
+.top::before {
+    content: "Toppvald";
+    font-size: 10px;
+    font-weight: bold;
+    padding: 3px 5px;
+    border-radius: 8px;
+    background: #fff;
+    position: absolute;
+    top: -7px;
+    left: 0px;
+}
+
+.info {
+    display: block;
+    opacity: 0.6;
+    font-size: 0.9em;
+    margin-top: 15px;
+}
+
+/* Chrome, Safari, Edge, Opera */
+#custom::-webkit-outer-spin-button,
+#custom::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+#custom {
+    -moz-appearance: textfield;
+}
+
+#donate-form button {
+    display: block;
+    border-radius: 0;
+    border: none;
+    width: calc(100% - 44px);
+    padding: 19px;
+    margin: 3px;
+    margin-top: 25px;
+    cursor: pointer;
+    box-sizing: content-box;
+    background-color: white;
+    font-size: 1.2em;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+#donate-form button:hover {
+    transition: 0.3s;
+    scale: 1.03;
+}
+
+#confirm {
+    display: none;
+    position: relative;
+    width: calc(100% +80px);
+    margin: -40px;
+}
+#confirm .hero video {
+    width: 100%;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+#confirm .body {
+    margin: 15px;
+    margin-bottom: 0;
+    text-align: center;
+}
+#confirm img {
+    margin: 30px;
+    margin-bottom: 40px;
+}
+.use div {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+.use div img {
+    width: 50px;
+    margin: 10px;
+}
+.use div span {
+    text-align: left;
+}

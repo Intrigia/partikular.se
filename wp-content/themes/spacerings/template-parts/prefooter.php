@@ -16,6 +16,6 @@
   </div>
   <div class="prefooter__donate">
     <h4>Stöd oss i vårt arbete!</h4>
-    <a onclick="donatemodal(this)" id="prefooter__donate__button">donera</a>
+    <a href="/donera" id="prefooter__donate__button">donera</a>
   </div>
 </div>

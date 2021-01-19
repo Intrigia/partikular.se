@@ -105,24 +105,6 @@
 		</div>
 	</div>
 </div>
-<div class="sciencemag__donation__modal" id="donate__button__click__modal">
-	<div class="donation__modal__body">
-		<div class="donation__header">
-			<span>Donera till Partikular</span>
-			<span>Skanna koden nedan med hjälp av<br>Swish för att donera ett<br>valfritt belopp.</span>
-		</div>
-		<img src="<?php echo get_template_directory_uri() . '/assets/qrcode.png';?>" id="swishqrcode">
-		<div class="donation__footer">
-			<button onclick="zoomin(this)">Förstora</button>
-			<span>Referensnummer: 5219930281</span>
-			<span>Utvecklad av Karl Sellergren</span>
-		</div>
-		<button class="modal__close" onclick="donatemodal(this)" id="modal__topright__close">
-			<hr class="first__line"/>
-			<hr class="scnd__line"/>
-		</button>
-	</div>
-</div>
 <script type="text/javascript" src="<?php echo get_template_directory_uri() . '/js/particles.js';?>"></script>
 <script type="text/javascript" src="<?php echo get_template_directory_uri() . '/js/app.js';?>"></script>
 <?php wp_footer(); ?>

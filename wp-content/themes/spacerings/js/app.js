@@ -1,8 +1,7 @@
 var config = {
-
   "particles": {
     "number": {
-      "value": 40,
+      "value": 175,
       "density": {
         "enable": true,
         "value_area": 800
@@ -37,7 +36,7 @@ var config = {
       }
     },
     "size": {
-      "value": 7,
+      "value": 3,
       "random": true,
       "anim": {
         "enable": false,
@@ -50,15 +49,15 @@ var config = {
       "enable": false,
       "distance": 150,
       "color": "#ffffff",
-      "opacity": 0,
-      "width": 0
+      "opacity": 0.4,
+      "width": 1
     },
     "move": {
       "enable": true,
       "speed": 0.5,
-      "direction": "top",
+      "direction": "none",
       "random": true,
-      "straight": true,
+      "straight": false,
       "out_mode": "out",
       "bounce": false,
       "attract": {
@@ -69,15 +68,15 @@ var config = {
     }
   },
   "interactivity": {
-    "detect_on": "window",
+    "detect_on": "canvas",
     "events": {
       "onhover": {
         "enable": false,
-        "mode": "repulse"
+        "mode": "grab"
       },
       "onclick": {
-        "enable": true,
-        "mode": "repulse"
+        "enable": false,
+        "mode": "push"
       },
       "resize": true
     },
@@ -107,7 +106,7 @@ var config = {
       }
     }
   },
-  "retina_detect": false
+  "retina_detect": true
 }
 
 particlesJS( "sciencemag_particles", config )

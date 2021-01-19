@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <?php
 /**
- * Template Name: Sign up form
+ * Template Name: Sign up template
  */
 ?>
 <!--

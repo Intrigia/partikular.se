@@ -60,13 +60,6 @@ Website developed by Karl Sellergren. Check out my LinkedIn profile: https://www
 	<h1 id="visibilityhidden">Partikular Ungdomstidning</h1>
 	<?php }?>
 	<header id="masthead" class="site-header">
-		<div class="sciencemag__cookie__notice__wrapper">
-			<div class="cookie__notice__text">
-				<span>Vi använder cookies för att du ska få den bästa möjliga upplevelsen, läs mer i vår
-					<a href="<?php echo esc_url( home_url( '/' ) ) . "integritetspolicy"; ?>">integritetspolicy</a>.</span>
-			</div>
-			<a onclick="closecookiebanner()" class="cookie__notice__btn">X</a>
-		</div>
 		<nav class="sciencemag__navigation">
 		<div class="site-branding">
 			<a href="<?php echo esc_url( home_url( '/' ) ); ?>">
@@ -105,6 +98,7 @@ Website developed by Karl Sellergren. Check out my LinkedIn profile: https://www
 				</div>
 			</div>
 			<button class="sciencemag__navbar__search" type="button" onclick="OpenSearchWindow()">Sök</button>
+			<a class="donate-button" href="/donera">Donera</button>
 			<a id="signup_button" href="<?php echo esc_url( home_url( '/bli-medlem' ) ); ?>">Bli medlem</a>
 			<div class="mobile__menu__blur" onclick="openmenu()"></div>
 			<!-- Blur must be before hamburger icon so z-index isn't needed-->

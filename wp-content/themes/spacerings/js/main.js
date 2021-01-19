@@ -121,33 +121,3 @@ function checkmodal() {
 function closenewslettermodal() {
   document.getElementById('nyhetsbrev__modal').classList.remove("modal__screen__settings");
 }
-
-// DONATE MODAL
-function donatemodal(button) {
-  if (button.id == "prefooter__donate__button") {
-    document.getElementById('donate__button__click__modal').style.display = "block";
-  } else if (button.id == "modal__topright__close") {
-    document.getElementById('donate__button__click__modal').style.display = "none";
-  }
-}
-function zoomin(button) {
-	if (button.innerHTML == "Förstora") {
-		document.querySelector('.donation__footer span').classList.add("black__font");
-		document.querySelector('.donation__footer span:last-child').classList.add("black__font");
-		document.querySelector('.donation__header span:last-child').classList.add("black__font");
-		document.querySelector('.sciencemag__donation__modal').classList.add("black__background");
-		document.querySelector('.sciencemag__donation__modal .modal__close').style.display = "none";
-		button.innerHTML = 'Ångra';
-		button.style.marginTop = "20px";
-    button.style.cursor = "zoom-out";
-	} else if (button.innerHTML == "Ångra") {
-		document.querySelector('.donation__footer span').classList.remove("black__font");
-		document.querySelector('.donation__footer span:last-child').classList.remove("black__font");
-		document.querySelector('.donation__header span:last-child').classList.remove("black__font");
-		document.querySelector('.sciencemag__donation__modal').classList.remove("black__background");
-		document.querySelector('.sciencemag__donation__modal .modal__close').style.display = "block";
-		button.innerHTML = 'Förstora';
-		button.style.marginTop = "0";
-    button.style.cursor = "zoom-in";
-	}
-}

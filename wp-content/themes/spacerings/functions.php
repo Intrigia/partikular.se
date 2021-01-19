@@ -133,14 +133,22 @@ add_action( 'widgets_init', 'science_mag_widgets_init' );
  */
 function science_mag_scripts() {
 	$issignup = false;
+	$isdonate = false;
 	if ( is_page() ) {
 		global $wp_query;
 		$template_name = get_post_meta( $wp_query->post->ID, '_wp_page_template', true );
-		if($template_name == 'signup.php') {
-			global $issignup;
-			$issignup = true;
+		switch ($template_name) {
+			case "signup.php":
+				global $issignup;
+				$issignup = true;
+			  break;
+			case "donate.php":
+				global $isdonate;
+				$isdonate = true;
+			  break;
 		}
 	}
+	
 
 	wp_enqueue_script( 'science-mag-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
 
@@ -149,8 +157,11 @@ function science_mag_scripts() {
 		wp_enqueue_script( 'science-mag-javascript', get_template_directory_uri() . '/js/main.js', array(), '', true );
 		wp_enqueue_script( 'science-mag-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 		wp_enqueue_style( 'science-mag-google-fonts', 'https://fonts.googleapis.com/css?family=Lato:400,700,900|Poppins:400,500,600,700&display=swap', false );
-		if ( is_page() ) {
+		if ( is_page() && $isdonate == false) {
 			wp_enqueue_script( 'science-mag-parallax', get_template_directory_uri() . '/js/parallax.min.js', array(), '', false );
+		}
+		if ( $isdonate ) {
+			wp_enqueue_style( 'science-mag-donate-style', get_template_directory_uri() . '/css/donate.css' );
 		}
 	} else {
 		wp_enqueue_style( 'science-mag-signup-style', get_template_directory_uri() . '/css/signup.css' );
