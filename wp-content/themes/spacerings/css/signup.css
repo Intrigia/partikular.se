@@ -1,3 +1,10 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v7.0.29,
+* Autoprefixer: v9.7.6
+* Browsers: last 4 version
+*/
+
 @import url('https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;800&family=Poppins:wght@500;700&family=Lato&&display=swap');
 
 :root {
@@ -7,7 +14,9 @@
 }
 
 body {
+	display: -ms-grid;
 	display: grid;
+	-ms-grid-columns: 40% 60%;
 	grid-template-columns: 40% 60%;
 	margin: 0;
 	font-family: var(--poppins);
@@ -70,7 +79,9 @@ body {
 	padding: 3em 0;
 	display: block;
 	top: 50%;
-	transform: translateY(-50%);
+	-webkit-transform: translateY(-50%);
+	    -ms-transform: translateY(-50%);
+	        transform: translateY(-50%);
 }
 
 h1, h2 {
@@ -103,15 +114,23 @@ input[type="email"] {
 }
 
 .halfwidth__container {
+	display: -ms-grid;
 	display: grid;
+	-ms-grid-columns: 1fr 1em 1fr;
 	grid-template-columns: repeat(2, 1fr);
-	column-gap: 1em;
+	-webkit-column-gap: 1em;
+	   -moz-column-gap: 1em;
+	        column-gap: 1em;
 }
 
 .twothirdwidth__container {
+	display: -ms-grid;
 	display: grid;
+	-ms-grid-columns: calc(60% - 0.5em) 1em calc(40% - 0.5em);
 	grid-template-columns: calc(60% - 0.5em) calc(40% - 0.5em);
-	column-gap: 1em;
+	-webkit-column-gap: 1em;
+	   -moz-column-gap: 1em;
+	        column-gap: 1em;
 }
 
 .mc-address-group {
@@ -135,6 +154,8 @@ input[type="email"] {
 	padding: 0.6em;
 	font-family: var(--poppins);
 	font-size: 0.9em;
+	-webkit-transition: 0.5s;
+	-o-transition: 0.5s;
 	transition: 0.5s;
 	-webkit-appearance: none;
 }
@@ -142,7 +163,6 @@ input[type="email"] {
 input[type="text"]:hover,
 input[type="email"]:hover {
 	-webkit-box-shadow: 0px 0px 23px 0px rgba(0, 0, 0, 0.1);
-	-moz-box-shadow: 0px 0px 23px 0px rgba(0, 0, 0, 0.1);
 	box-shadow: 0px 0px 23px 0px rgba(0, 0, 0, 0.1);
 }
 
@@ -152,7 +172,6 @@ input[type="email"]:focus {
 	background-color: white;
 	border-color: var(--color);
 	-webkit-box-shadow: 0px 0px 23px 0px rgba(0, 0, 0, 0.1);
-	-moz-box-shadow: 0px 0px 23px 0px rgba(0, 0, 0, 0.1);
 	box-shadow: 0px 0px 23px 0px rgba(0, 0, 0, 0.1);
 }
 
@@ -184,6 +203,8 @@ input[type="email"]:focus {
 	background-color: white;
 	border: 1px solid #B9B9B9;
 	border-radius: 0.3em;
+	-webkit-transition: 0.3s;
+	-o-transition: 0.3s;
 	transition: 0.3s;
 }
 
@@ -192,7 +213,6 @@ input[type="email"]:focus {
 
 .checkbox_policies:hover input~.checkmark {
 	-webkit-box-shadow: 0px 0px 23px 0px rgba(0, 0, 0, 0.2);
-	-moz-box-shadow: 0px 0px 23px 0px rgba(0, 0, 0, 0.2);
 	box-shadow: 0px 0px 23px 0px rgba(0, 0, 0, 0.2);
 }
 
@@ -246,6 +266,7 @@ select:-webkit-autofill:hover,
 select:-webkit-autofill:focus {
 	-webkit-text-fill-color: black;
 	-webkit-box-shadow: 0 0 0px 1000px #dddddd inset;
+	-webkit-transition: background-color 5000s ease-in-out 0s;
 	transition: background-color 5000s ease-in-out 0s;
 }
 
@@ -263,6 +284,8 @@ select:-webkit-autofill:focus {
 	text-align: center;
 	color: white;
 	cursor: pointer;
+	-webkit-transition: 0.3s;
+	-o-transition: 0.3s;
 	transition: 0.3s;
     width: 50%;
     overflow: hidden;
@@ -271,6 +294,10 @@ select:-webkit-autofill:focus {
 .mc_embed_continuebtn span {
 	position: relative;
     z-index: 20;
+}
+@-webkit-keyframes load {
+    from {right: 100%;}
+    to {right: 0;}
 }
 @keyframes load {
     from {right: 100%;}
@@ -286,7 +313,8 @@ select:-webkit-autofill:focus {
     height: 100%;
     z-index: 10;
     background-color: rgba(0, 0, 0, .1);
-    animation: load 4s;
+    -webkit-animation: load 4s;
+            animation: load 4s;
 }
 ul {
 	list-style-type: none;
@@ -343,10 +371,13 @@ fieldset {
 	font-size: 0.85em;
 	border: 2px solid #d5d5d5;
 	width: 100%;
+	-webkit-transition: 0.3s;
+	-o-transition: 0.3s;
 	transition: 0.3s;
 	cursor: pointer;
 	color: #505050;
-	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	        box-sizing: border-box;
 }
 .altone label {
 	border-bottom-right-radius: 0;
@@ -372,7 +403,9 @@ fieldset {
 	position: absolute;
 	top: 50%;
 	right: 1em;
-	transform: translateY(-50%);
+	-webkit-transform: translateY(-50%);
+	    -ms-transform: translateY(-50%);
+	        transform: translateY(-50%);
 	height: 1.5em;
 	width: 1.5em;
 	background-color: #d5d5d5;
@@ -396,11 +429,12 @@ fieldset {
 	width: 20em;
 	z-index: 4;
 	position: absolute;
-	transform: translateY(-70%);
+	-webkit-transform: translateY(-70%);
+	    -ms-transform: translateY(-70%);
+	        transform: translateY(-70%);
 	right: 1.8em;
 	border-radius: .8em;
 	-webkit-box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.2);
-	-moz-box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.2);
 	box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.2);
 	display: none;
 }
@@ -411,6 +445,8 @@ fieldset {
 	background-color: #E3E3E3;
 	border-radius: 0.3em;
 	padding: 0.5em;
+	display: -webkit-inline-box;
+	display: -ms-inline-flexbox;
 	display: inline-flex;
 	vertical-align: middle;
 	width: calc(100% - 1em);
@@ -448,6 +484,7 @@ fieldset {
 	bottom: 0;
 	background-color: #ccc;
 	-webkit-transition: .4s;
+	-o-transition: .4s;
 	transition: .4s;
 	border-radius: 3em;
 	margin-right: 0.6em;
@@ -462,6 +499,7 @@ fieldset {
 	bottom: 0.20em;
 	background-color: white;
 	-webkit-transition: .4s;
+	-o-transition: .4s;
 	transition: .4s;
 	border-radius: 50%;
 }
@@ -471,7 +509,8 @@ fieldset {
 }
 
 .gdprRequired label input[type="checkbox"]:focus+.slider {
-	box-shadow: 0 0 1px var(--color);
+	-webkit-box-shadow: 0 0 1px var(--color);
+	        box-shadow: 0 0 1px var(--color);
 }
 
 .gdprRequired label input[type="checkbox"]:checked+.slider:before {
@@ -481,6 +520,8 @@ fieldset {
 }
 .mc_embed_page_2 {
 	display: none;
+	-webkit-transition: 1s;
+	-o-transition: 1s;
 	transition: 1s;
 }
 
@@ -501,12 +542,15 @@ input[type="submit"] {
 }
 
 .submitbtn {
+	-webkit-transition: 0.3s;
+	-o-transition: 0.3s;
 	transition: 0.3s;
 }
 
 .mc_embed_continuebtn:hover,
 .submitbtn:hover {
-	filter: brightness(1.2);
+	-webkit-filter: brightness(1.2);
+	        filter: brightness(1.2);
 }
 
 .invalid {
@@ -550,7 +594,9 @@ input[type="submit"] {
 	position: absolute;
 	top: 50%;
 	left: 50%;
-	transform: translate(-50%, -50%);
+	-webkit-transform: translate(-50%, -50%);
+	    -ms-transform: translate(-50%, -50%);
+	        transform: translate(-50%, -50%);
 	width: 80%;
 }
 
@@ -573,7 +619,9 @@ input[type="submit"] {
 	position: absolute;
 	left: 50%;
 	top: 50%;
-	transform: translate(-50%, -50%);
+	-webkit-transform: translate(-50%, -50%);
+	    -ms-transform: translate(-50%, -50%);
+	        transform: translate(-50%, -50%);
 	text-align: center;
 	color: #313131;
 }
@@ -619,7 +667,9 @@ input[type="submit"] {
 	}
 	#mc_embed_signup {
 		top: 0;
-		transform: none;
+		-webkit-transform: none;
+		    -ms-transform: none;
+		        transform: none;
 	}
 	.partikular__signup__right {
 		min-height: none;

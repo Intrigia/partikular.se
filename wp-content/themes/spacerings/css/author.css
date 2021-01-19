@@ -1,3 +1,10 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v7.0.29,
+* Autoprefixer: v9.7.6
+* Browsers: last 4 version
+*/
+
 html {
   scroll-behavior: smooth;
 }
@@ -15,7 +22,9 @@ html {
   width: auto;
   position: absolute;
   left: 50%;
-  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+          transform: translateX(-50%);
 }
 .profileimage__wrap a {
   font-size: 6vw;
@@ -29,9 +38,14 @@ html {
   color: white;
 }
 .authorimage__ring {
-  animation: faaade ease 3s;
-  animation-iteration-count: 1;
-  animation-fill-mode: forwards;
+  -webkit-animation: faaade ease 3s;
+          animation: faaade ease 3s;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-transition: 2s;
+  -o-transition: 2s;
   transition: 2s;
   display: inline-block;
   vertical-align: middle;
@@ -40,8 +54,11 @@ html {
   border-radius: 100%;
   border: 1vw solid white;
   -webkit-box-shadow: 0 0 100px 0px rgba(255, 255, 255,0.4), inset 0 0 100px 0px rgba(255, 255, 255,0.2);
-  -moz-box-shadow: 0 0 100px 0px rgba(255, 255, 255,0.4), inset 0 0 100px 0px rgba(255, 255, 255,0.2);
   box-shadow: 0 0 100px 0px rgba(255, 255, 255,0.4), inset 0 0 100px 0px rgba(255, 255, 255,0.2);
+}
+@-webkit-keyframes faaade {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
 }
 @keyframes faaade {
     0% {opacity: 0;}
@@ -58,7 +75,8 @@ html {
   z-index: 5;
 }
 .authorimage__image img {
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   width: 16vw;
   height: 16vw;
 }
@@ -97,12 +115,19 @@ html {
   border-radius: 35px;
   position: absolute;
   left: 50%;
-  transform: translateX(-50%);
-  animation: scrollanim 1s infinite alternate;
+  -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+          transform: translateX(-50%);
+  -webkit-animation: scrollanim 1s infinite alternate;
+          animation: scrollanim 1s infinite alternate;
+}
+@-webkit-keyframes scrollanim {
+  0% {-webkit-transform: translate(-50%, 0);transform: translate(-50%, 0);}
+  100% {-webkit-transform: translate(-50%, 5px);transform: translate(-50%, 5px);}
 }
 @keyframes scrollanim {
-  0% {transform: translate(-50%, 0);}
-  100% {transform: translate(-50%, 5px);}
+  0% {-webkit-transform: translate(-50%, 0);transform: translate(-50%, 0);}
+  100% {-webkit-transform: translate(-50%, 5px);transform: translate(-50%, 5px);}
 }
 .sciencmag__author__posts {
   position: relative;
