@@ -40,7 +40,7 @@ class WP_User_Avatar {
 
             return ob_get_clean();
 
-        }, 10, 2);
+        }, 9999999999999999999, 2);
 
       // Admin scripts
       $pages = array('profile.php', 'options-discussion.php', 'user-edit.php', 'user-new.php');

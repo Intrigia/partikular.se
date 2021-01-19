@@ -64,6 +64,7 @@ class ComposerStaticInit6b28807d8074d3f19904fd6cf8db753f
     );
 
     public static $classMap = array (
+        'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
         'PPVersionNotices\\Module\\AdInterface' => __DIR__ . '/..' . '/publishpress/wordpress-version-notices/src/Module/AdInterface.php',
         'PPVersionNotices\\Module\\Footer\\Module' => __DIR__ . '/..' . '/publishpress/wordpress-version-notices/src/Module/Footer/Module.php',
         'PPVersionNotices\\Module\\MenuLink\\Module' => __DIR__ . '/..' . '/publishpress/wordpress-version-notices/src/Module/MenuLink/Module.php',

@@ -31,7 +31,11 @@ class WP_User_Avatar_Admin {
     add_action('admin_init', array($this, 'wpua_register_settings'));
     // Default avatar
     add_filter('default_avatar_select', array($this, 'wpua_add_default_avatar'), 10);
-    add_filter('whitelist_options', array($this, 'wpua_whitelist_options'), 10);
+      if (function_exists('add_allowed_options')) {
+          add_filter('allowed_options', array($this, 'wpua_whitelist_options'), 10);
+      } else {
+          add_filter('whitelist_options', array($this, 'wpua_whitelist_options'), 10);
+      }
     // Additional plugin info
     add_filter('plugin_action_links', array($this, 'wpua_action_links'), 10, 2);
     add_filter('plugin_row_meta', array($this, 'wpua_row_meta'), 10, 2);
@@ -42,7 +46,7 @@ class WP_User_Avatar_Admin {
     }
     // Media states
     add_filter('display_media_states', array($this, 'wpua_add_media_state'), 10, 1);
-	
+
   }
 
   /**
@@ -51,7 +55,7 @@ class WP_User_Avatar_Admin {
    * @uses add_option()
    */
   public function wpua_options() {
-    
+
     add_option('avatar_default_wp_user_avatar', "");
     add_option('wp_user_avatar_allow_upload', '0');
     add_option('wp_user_avatar_disable_gravatar', '0');
@@ -61,7 +65,7 @@ class WP_User_Avatar_Admin {
     add_option('wp_user_avatar_resize_upload', '0');
     add_option('wp_user_avatar_resize_w', '96');
     add_option('wp_user_avatar_tinymce', '1');
-    add_option('wp_user_avatar_upload_size_limit', '0');	
+    add_option('wp_user_avatar_upload_size_limit', '0');
 
     if(wp_next_scheduled( 'wpua_has_gravatar_cron_hook' )){
       $cron=get_option('cron');
@@ -100,7 +104,7 @@ class WP_User_Avatar_Admin {
     update_option($wp_user_roles, $user_roles);
     // Reset all default avatars to Mystery Man
     update_option('avatar_default', 'mystery');
-	
+
   }
 
   /**
@@ -293,7 +297,7 @@ class WP_User_Avatar_Admin {
    * @param string $file
    * @return array $links
    */
-  public function wpua_action_links($links, $file) { 
+  public function wpua_action_links($links, $file) {
     if(basename(dirname($file)) == 'wp-user-avatar') {
       $links[] = '<a href="'.esc_url(add_query_arg(array('page' => 'wp-user-avatar'), admin_url('admin.php'))).'">'.__('Settings','wp-user-avatar').'</a>';
     }
@@ -373,11 +377,14 @@ class WP_User_Avatar_Admin {
    */
   public function wpua_add_media_state($states) {
     global $post, $wpua_avatar_default;
-    $is_wpua = get_post_custom_values('_wp_attachment_wp_user_avatar', $post->ID);
+
+    $is_wpua = isset($post->ID) ? get_post_custom_values('_wp_attachment_wp_user_avatar', $post->ID) : '';
+
     if(!empty($is_wpua)) {
       $states[] = __('Profile Picture','wp-user-avatar');
     }
-    if(!empty($wpua_avatar_default) && ($wpua_avatar_default == $post->ID)) {
+
+    if(!empty($wpua_avatar_default) && isset($post->ID) && ($wpua_avatar_default == $post->ID)) {
       $states[] = __('Default Avatar','wp-user-avatar');
     }
     /**
@@ -387,7 +394,7 @@ class WP_User_Avatar_Admin {
      */
     return apply_filters('wpua_add_media_state', $states);
   }
-  
+
 }
 
 /**

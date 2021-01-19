@@ -6,6 +6,7 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'Composer\\InstalledVersions' => $vendorDir . '/composer/InstalledVersions.php',
     'PPVersionNotices\\Module\\AdInterface' => $vendorDir . '/publishpress/wordpress-version-notices/src/Module/AdInterface.php',
     'PPVersionNotices\\Module\\Footer\\Module' => $vendorDir . '/publishpress/wordpress-version-notices/src/Module/Footer/Module.php',
     'PPVersionNotices\\Module\\MenuLink\\Module' => $vendorDir . '/publishpress/wordpress-version-notices/src/Module/MenuLink/Module.php',
