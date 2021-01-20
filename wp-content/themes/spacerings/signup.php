@@ -112,7 +112,7 @@ Website developed by Karl Sellergren. Check out my LinkedIn profile: https://www
                     </fieldset>
                 </div>
                 <div class="mc_policies">
-                    <label class="checkbox_policies subfield" for="policies">Genom att bli medlem hos oss godkänner jag föreningens <a href="<?php echo esc_url( home_url( '/' ) . 'integritetspolicy' ); ?>" target="_blank">integritetspolicy</a> och <a href="https://docs.google.com/document/d/1IT_yR_jy3recgfRuu7ELYsNzSCe3NLR-cRBMictZKV4/edit?usp=sharing" target="_blank">stadgar</a>.
+                    <label class="checkbox_policies subfield" for="policies">Genom att bli medlem hos oss godkänner jag föreningens <a href="<?php echo esc_url( home_url( '/' ) . 'integritetspolicy' ); ?>" target="_blank">integritetspolicy</a> och <a href="https://docs.google.com/document/d/1VXkAOdN85rzaWINpFhQLVklAMTdCAxIh0g6A6tGLMXY/edit?usp=sharing" target="_blank">stadgar</a>.
                         <input type="checkbox" id="policies" name="policies" value="Y" class="av-checkbox " required>
                         <span class="checkmark"></span>
                     </label>
