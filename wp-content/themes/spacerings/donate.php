@@ -35,10 +35,10 @@ get_header();
                             <a amount="50">50 SEK</a>
                             <a amount="100" class="selected top">100 SEK</a>
                             <a amount="150">150 SEK</a>
-                            <div><input id="custom" type="number"></input>SEK</div>
+                            <div><input id="custom" type="number" min="1"></input>SEK</div>
                         </div>
                         <button type="submit">Donera</button>
-                        <input type="hidden" id="amount" value="100">
+                        <input type="hidden" id="amount" name="amount" value="100">
                     </form>
                     <span class="info">Vi generar en QR-kod åt dig som du kan skanna och sedan betala med.</span>
                 </div>

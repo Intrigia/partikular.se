@@ -19,7 +19,7 @@ const form = document.forms['donate-form']
 form.addEventListener('submit', e => {
     e.preventDefault()
     let number = "1236568380";
-    let total = "100";
+    let total = document.getElementById("amount").value;
     let reference = new Date().getUTCMilliseconds().toString();
     let msg = "Tack för din donation. Ref.nummer: " + reference;
     let editcode = "0";
