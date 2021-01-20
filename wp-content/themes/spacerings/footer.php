@@ -105,8 +105,6 @@
 		</div>
 	</div>
 </div>
-<script type="text/javascript" src="<?php echo get_template_directory_uri() . '/js/particles.js';?>"></script>
-<script type="text/javascript" src="<?php echo get_template_directory_uri() . '/js/app.js';?>"></script>
 <?php wp_footer(); ?>
 
 </body>

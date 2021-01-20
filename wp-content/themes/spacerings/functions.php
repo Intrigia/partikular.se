@@ -148,7 +148,6 @@ function science_mag_scripts() {
 			  break;
 		}
 	}
-	
 
 	wp_enqueue_script( 'science-mag-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
 
@@ -162,6 +161,9 @@ function science_mag_scripts() {
 		}
 		if ( $isdonate ) {
 			wp_enqueue_style( 'science-mag-donate-style', get_template_directory_uri() . '/css/donate.css' );
+		} else {
+			wp_enqueue_script( 'science-mag-particles', get_template_directory_uri() . '/js/particles.js', array(), '20151215', true );
+			wp_enqueue_script( 'science-mag-particles-app', get_template_directory_uri() . '/js/app.js', array(), '20151215', true );
 		}
 	} else {
 		wp_enqueue_style( 'science-mag-signup-style', get_template_directory_uri() . '/css/signup.css' );
