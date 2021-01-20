@@ -1,18 +1,5 @@
 document.querySelector(".searchbox__wrap input[type=search]").setAttribute("placeholder", "Vad vill du läsa idag?");
 
-//COOKIES BAR
-if (localStorage.getItem('cookiebanner') !== 'visad') {
-  document.querySelector('.sciencemag__cookie__notice__wrapper').style.display = "grid";
-  document.querySelector('.sciencemag__mobile__menu').classList.add("cookie__banner__mobile__menu");
-  document.querySelector('.sciencemag__navigation').classList.add("cookie__banner__navigation");
-  localStorage.setItem('cookiebanner', 'visad');
-}
-function closecookiebanner() {
-  document.querySelector('.sciencemag__cookie__notice__wrapper').style.display = "none";
-  document.querySelector('.sciencemag__mobile__menu').classList.remove("cookie__banner__mobile__menu");
-  document.querySelector('.sciencemag__navigation').classList.remove("cookie__banner__navigation");
-}
-
 function opensubcategories(el) {
   submenuquery = document.querySelector("." + el.parentElement.id + " .sub-menu");
   if (submenuquery.style.height !== "auto") {
