@@ -6,19 +6,19 @@
     'aliases' => 
     array (
     ),
-    'reference' => '3b1ff142dbda8e751d4dd716cb8ec09126ea9e19',
+    'reference' => '912a97fcabce1bec52b519a5228dad427d9603b5',
     'name' => 'publishpress/publishpress',
   ),
   'versions' => 
   array (
     'pimple/pimple' => 
     array (
-      'pretty_version' => 'v3.3.1',
-      'version' => '3.3.1.0',
+      'pretty_version' => 'v3.2.3',
+      'version' => '3.2.3.0',
       'aliases' => 
       array (
       ),
-      'reference' => '21e45061c3429b1e06233475cc0e1f6fc774d5b0',
+      'reference' => '9e403941ef9d65d20cba7d54e29fe906db42cf32',
     ),
     'psr/container' => 
     array (
@@ -36,7 +36,7 @@
       'aliases' => 
       array (
       ),
-      'reference' => '3b1ff142dbda8e751d4dd716cb8ec09126ea9e19',
+      'reference' => '912a97fcabce1bec52b519a5228dad427d9603b5',
     ),
     'publishpress/wordpress-version-notices' => 
     array (
@@ -49,12 +49,12 @@
     ),
     'symfony/polyfill-ctype' => 
     array (
-      'pretty_version' => 'v1.20.0',
-      'version' => '1.20.0.0',
+      'pretty_version' => 'v1.19.0',
+      'version' => '1.19.0.0',
       'aliases' => 
       array (
       ),
-      'reference' => 'f4ba089a5b6366e453971d3aad5fe8e897b37f41',
+      'reference' => 'aed596913b70fae57be53d86faa2e9ef85a2297b',
     ),
     'twig/twig' => 
     array (
