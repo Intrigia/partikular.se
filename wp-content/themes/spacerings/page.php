@@ -251,7 +251,6 @@ get_header();
   		) );
   		?>
   	  </div><!-- .entry-content -->
-  		<?php echo $categories[0]->name; ?>
   		<div class="sciencemag__post__pagination">
   			<?php wp_link_pages( array(
   			'before'           => '',
