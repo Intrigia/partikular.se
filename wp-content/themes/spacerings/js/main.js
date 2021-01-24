@@ -94,17 +94,3 @@ function OpenSearchWindow() {
     searchwindow_isopen = true;
   }
 }
-
-
-// NEWSLETTER SIGNUP MODAL
-var newslettertimer = setInterval(checkmodal, 40000);
-
-function checkmodal() {
-  if (localStorage.getItem('newslettermodal') !== 'visad') {
-    document.getElementById('nyhetsbrev__modal').classList.add("modal__screen__settings");
-    localStorage.setItem('newslettermodal', 'visad');
-  }
-}
-function closenewslettermodal() {
-  document.getElementById('nyhetsbrev__modal').classList.remove("modal__screen__settings");
-}

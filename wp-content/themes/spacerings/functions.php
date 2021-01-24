@@ -332,7 +332,6 @@ function extra_user_profile_fields( $user ) { ?>
     </tr>
     </table>
 	<script>
-          document.querySelector(".user-profile-picture").style.display = "none";
           document.querySelector(".user-url-wrap").style.display = "none";
           document.querySelector(".user-facebook-wrap").style.display = "none";
           document.querySelector(".user-instagram-wrap").style.display = "none";
@@ -343,7 +342,6 @@ function extra_user_profile_fields( $user ) { ?>
           document.querySelector(".user-twitter-wrap").style.display = "none";
           document.querySelector(".user-youtube-wrap").style.display = "none";
           document.querySelector(".user-wikipedia-wrap").style.display = "none";
-          document.getElementById("email-description").style.display = "none";
     </script>
 <?php }
 
@@ -507,19 +505,7 @@ function partikular_allowed_block_types( $allowed_block_types, $post ) {
 				'core/archives',
 				'core/categories',
 				'core/latest-posts',
-				'jetpack/gif',
-				'jetpack/map',
-				'jetpack/podcast-player',
-				'jetpack/slideshow',
-				'jetpack/tiled-gallery',
 				'core-embed/youtube',
-				'core-embed/facebook',
-				'core-embed/instagram',
-				'core-embed/spotify',
-				'core-embed/vimeo',
-				'core-embed/flickr',
-				'core-embed/imgur',
-				'core-embed/ted',
 				'genesis-custom-blocks/kallor-start',
 				'genesis-custom-blocks/kallor-slut',
 				'genesis-custom-blocks/book',
@@ -554,19 +540,7 @@ function partikular_allowed_block_types( $allowed_block_types, $post ) {
 				'core/archives',
 				'core/categories',
 				'core/latest-posts',
-				'jetpack/gif',
-				'jetpack/map',
-				'jetpack/podcast-player',
-				'jetpack/slideshow',
-				'jetpack/tiled-gallery',
 				'core-embed/youtube',
-				'core-embed/facebook',
-				'core-embed/instagram',
-				'core-embed/spotify',
-				'core-embed/vimeo',
-				'core-embed/flickr',
-				'core-embed/imgur',
-				'core-embed/ted',
 				'genesis-custom-blocks/kallor-start',
 				'genesis-custom-blocks/kallor-slut',
 				'genesis-custom-blocks/book',
