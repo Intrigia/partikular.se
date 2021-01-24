@@ -82,29 +82,6 @@
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->
-<div class="sciencemag__newsletter__modal" id="nyhetsbrev__modal">
-	<div class="modal__body">
-		<div class="modal__image" style="background-image:url('<?php echo get_template_directory_uri() . '/assets/enheter.jpg';?>');"></div>
-		<div class="modal__text">
-			<div class="modal__text__header">
-				<span class="logo__p">p</span>
-				<span>IDEELL FÖRENING</span>
-			</div>
-			<div class="modal__content">
-				<p>Förlåt för att vi stör, men:<br/><br/>Bli medlem i vår ideella förening
-				 för att få medlemsförmåner och bli skribent hos oss. Det är helt gratis och
-				 genom att bli medlem hjälper du oss att expandera.</p>
-			</div>
-			<div class="modal__form">
-				<a id="mc-embedded-subscribe" href="/bli-medlem">Bli medlem ⬈</a>
-			</div>
-			<button class="modal__close" onclick="closenewslettermodal()">
-				<hr class="first__line"/>
-				<hr class="scnd__line"/>
-			</button>
-		</div>
-	</div>
-</div>
 <?php wp_footer(); ?>
 
 </body>
