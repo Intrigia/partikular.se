@@ -4,7 +4,7 @@ Contributors: properfraction, collizo4sky
 Tags: user profile, avatar, gravatar, author image, author photo, author avatar, bbPress, profile avatar, profile image, user avatar, user image, user photo, widget
 Requires at least: 4.0
 Tested up to: 5.6
-Stable tag: 2.2.9
+Stable tag: 2.2.10
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -369,6 +369,10 @@ This would output:
 4. After you've chosen a WP User Avatar image, you will see the option to remove it.
 
 == Changelog ==
+
+= 2.2.10 =
+* Fixed: Warning: Missing argument 2 for WP_User_Avatar.
+* Re-added support for hook implementation eg on wp frontend.
 
 = 2.2.9 =
 * Fixed PHP Notice:  Trying to get property 'ID' of non-object.

@@ -8,6 +8,7 @@ $baseDir = dirname($vendorDir);
 return array(
     'Genesis\\CustomBlocks\\Admin\\Admin' => $baseDir . '/php/Admin/Admin.php',
     'Genesis\\CustomBlocks\\Admin\\Documentation' => $baseDir . '/php/Admin/Documentation.php',
+    'Genesis\\CustomBlocks\\Admin\\EditBlock' => $baseDir . '/php/Admin/EditBlock.php',
     'Genesis\\CustomBlocks\\Admin\\Import' => $baseDir . '/php/Admin/Import.php',
     'Genesis\\CustomBlocks\\Admin\\Onboarding' => $baseDir . '/php/Admin/Onboarding.php',
     'Genesis\\CustomBlocks\\Admin\\Upgrade' => $baseDir . '/php/Admin/Upgrade.php',

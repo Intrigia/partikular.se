@@ -5,14 +5,28 @@
 /**
  * External dependencies
  */
-import { get, unescape as unescapeString, find, some, invoke } from 'lodash';
+import {
+	get,
+	unescape as unescapeString,
+	without,
+	find,
+	some,
+	invoke,
+} from 'lodash';
 
 /**
  * WordPress dependencies
  */
 import { __, _x, _n, sprintf } from '@wordpress/i18n';
 import { Component } from '@wordpress/element';
-import { TreeSelect, RadioControl, Button } from '@wordpress/components';
+import {
+	RadioControl,
+	TreeSelect,
+	withSpokenMessages,	
+	Button,
+} from '@wordpress/components';
+import { withSelect, withDispatch } from '@wordpress/data';
+import { withInstanceId, compose } from '@wordpress/compose';
 import apiFetch from '@wordpress/api-fetch';
 import { addQueryArgs } from '@wordpress/url';
 
@@ -68,7 +82,8 @@ class RadioTermSelector extends Component {
 	}
 
 	onChangeFormName( event ) {
-		const newValue = event.target.value.trim() === '' ? '' : event.target.value;
+		const newValue =
+			event.target.value.trim() === '' ? '' : event.target.value;
 		this.setState( { formName: newValue } );
 	}
 
@@ -84,8 +99,11 @@ class RadioTermSelector extends Component {
 
 	findTerm( terms, parent, name ) {
 		return find( terms, ( term ) => {
-			return ( ( ! term.parent && ! parent ) || parseInt( term.parent ) === parseInt( parent ) ) &&
-				term.name.toLowerCase() === name.toLowerCase();
+			return (
+				( ( ! term.parent && ! parent ) ||
+					parseInt( term.parent ) === parseInt( parent ) ) &&
+				term.name.toLowerCase() === name.toLowerCase()
+			);
 		} );
 	}
 
@@ -98,11 +116,18 @@ class RadioTermSelector extends Component {
 		}
 
 		// check if the term we are adding already exists
-		const existingTerm = this.findTerm( availableTerms, formParent, formName );
+		const existingTerm = this.findTerm(
+			availableTerms,
+			formParent,
+			formName
+		);
 		if ( existingTerm ) {
 			// if the term we are adding exists but is not selected select it
 			if ( ! some( terms, ( term ) => term === existingTerm.id ) ) {
-				onUpdateTerms( [ existingTerm.id ], taxonomy.rest_base ); // @helgatheviking
+				onUpdateTerms(
+					[ existingTerm.id ], // @helgatheviking
+					taxonomy.rest_base
+				);
 			}
 			this.setState( {
 				formName: '',
@@ -123,29 +148,34 @@ class RadioTermSelector extends Component {
 			},
 		} );
 		// Tries to create a term or fetch it if it already exists
-		const findOrCreatePromise = this.addRequest
-			.catch( ( error ) => {
-				const errorCode = error.code;
-				if ( errorCode === 'term_exists' ) {
-					// search the new category created since last fetch
-					this.addRequest = apiFetch( {
-						path: addQueryArgs(
-							`/wp/v2/${ taxonomy.rest_base }`,
-							{ ...DEFAULT_QUERY, parent: formParent || 0, search: formName }
-						),
-					} );
-					return this.addRequest
-						.then( ( searchResult ) => {
-							return this.findTerm( searchResult, formParent, formName );
-						} );
-				}
-				return Promise.reject( error );
-			} );
-		findOrCreatePromise
-			.then( ( term ) => {
-				const hasTerm = !! find( this.state.availableTerms, ( availableTerm ) => availableTerm.id === term.id );
-				const newAvailableTerms = hasTerm ? this.state.availableTerms : [ term, ...this.state.availableTerms ];
+		const findOrCreatePromise = this.addRequest.catch( ( error ) => {
+			const errorCode = error.code;
+			if ( errorCode === 'term_exists' ) {
+				// search the new category created since last fetch
+				this.addRequest = apiFetch( {
+					path: addQueryArgs( `/wp/v2/${ taxonomy.rest_base }`, {
+						...DEFAULT_QUERY,
+						parent: formParent || 0,
+						search: formName,
+					} ),
+				} );
+				return this.addRequest.then( ( searchResult ) => {
+					return this.findTerm( searchResult, formParent, formName );
+				} );
+			}
+			return Promise.reject( error );
+		} );
+		findOrCreatePromise.then(
+			( term ) => {
+				const hasTerm = !! find(
+					this.state.availableTerms,
+					( availableTerm ) => availableTerm.id === term.id
+				);
+				const newAvailableTerms = hasTerm
+					? this.state.availableTerms
+					: [ term, ...this.state.availableTerms ];
 				const termAddedMessage = sprintf(
+					/* translators: %s: taxonomy name */
 					_x( '%s added', 'term' ),
 					get(
 						this.props.taxonomy,
@@ -160,10 +190,13 @@ class RadioTermSelector extends Component {
 					formName: '',
 					formParent: '',
 					availableTerms: newAvailableTerms,
-					availableTermsTree: this.sortBySelected( buildTermsTree( newAvailableTerms ) ),
+					availableTermsTree: this.sortBySelected(
+						buildTermsTree( newAvailableTerms )
+					),
 				} );
 				onUpdateTerms( [ term.id ], taxonomy.rest_base ); // @helgatheviking
-			}, ( xhr ) => {
+			},
+			( xhr ) => {
 				if ( xhr.statusText === 'abort' ) {
 					return;
 				}
@@ -171,7 +204,8 @@ class RadioTermSelector extends Component {
 				this.setState( {
 					adding: false,
 				} );
-			} );
+			}
+		);
 	}
 
 	componentDidMount() {
@@ -195,11 +229,18 @@ class RadioTermSelector extends Component {
 			return;
 		}
 		this.fetchRequest = apiFetch( {
-			path: addQueryArgs( `/wp/v2/${ taxonomy.rest_base }`, DEFAULT_QUERY ),
+			path: addQueryArgs(
+				`/wp/v2/${ taxonomy.rest_base }`,
+				DEFAULT_QUERY
+			),
 		} );
 		this.fetchRequest.then(
-			( terms ) => { // resolve
-				const availableTermsTree = this.sortBySelected( buildTermsTree( terms ) );
+			( terms ) => {
+				// resolve
+
+				const availableTermsTree = this.sortBySelected(
+					buildTermsTree( terms )
+				);
 
 				this.fetchRequest = null;
 				this.setState( {
@@ -208,7 +249,8 @@ class RadioTermSelector extends Component {
 					availableTerms: terms,
 				} );
 			},
-			( xhr ) => { // reject
+			( xhr ) => {
+				// reject
 				if ( xhr.statusText === 'abort' ) {
 					return;
 				}
@@ -229,7 +271,10 @@ class RadioTermSelector extends Component {
 			if ( undefined === termTree.children ) {
 				return false;
 			}
-			const anyChildIsSelected = termTree.children.map( treeHasSelection ).filter( ( child ) => child ).length > 0;
+			const anyChildIsSelected =
+				termTree.children
+					.map( treeHasSelection )
+					.filter( ( child ) => child ).length > 0;
 			if ( anyChildIsSelected ) {
 				return true;
 			}
@@ -260,7 +305,9 @@ class RadioTermSelector extends Component {
 	setFilterValue( event ) {
 		const { availableTermsTree } = this.state;
 		const filterValue = event.target.value;
-		const filteredTermsTree = availableTermsTree.map( this.getFilterMatcher( filterValue ) ).filter( ( term ) => term );
+		const filteredTermsTree = availableTermsTree
+			.map( this.getFilterMatcher( filterValue ) )
+			.filter( ( term ) => term );
 		const getResultCount = ( terms ) => {
 			let count = 0;
 			for ( let i = 0; i < terms.length; i++ ) {
@@ -271,15 +318,14 @@ class RadioTermSelector extends Component {
 			}
 			return count;
 		};
-		this.setState(
-			{
-				filterValue,
-				filteredTermsTree,
-			}
-		);
+		this.setState( {
+			filterValue,
+			filteredTermsTree,
+		} );
 
 		const resultCount = getResultCount( filteredTermsTree );
 		const resultsFoundMessage = sprintf(
+			/* translators: %d: number of results */
 			_n( '%d result found.', '%d results found.', resultCount ),
 			resultCount
 		);
@@ -299,12 +345,20 @@ class RadioTermSelector extends Component {
 			// Map and filter the children, recursive so we deal with grandchildren
 			// and any deeper levels.
 			if ( term.children.length > 0 ) {
-				term.children = term.children.map( matchTermsForFilter ).filter( ( child ) => child );
+				term.children = term.children
+					.map( matchTermsForFilter )
+					.filter( ( child ) => child );
 			}
 
 			// If the term's name contains the filterValue, or it has children
 			// (i.e. some child matched at some point in the tree) then return it.
-			if ( -1 !== term.name.toLowerCase().indexOf( filterValue.toLowerCase() ) || term.children.length > 0 ) {
+			if (
+				-1 !==
+					term.name
+						.toLowerCase()
+						.indexOf( filterValue.toLowerCase() ) ||
+				term.children.length > 0
+			) {
 				return term;
 			}
 
@@ -346,19 +400,41 @@ class RadioTermSelector extends Component {
 	}
 
 	render() {
-		const { slug, taxonomy, terms, instanceId, hasCreateAction, hasAssignAction } = this.props; // @helegatheviking
+		const {
+			slug,
+			taxonomy,
+			terms, // @helegatheviking
+			instanceId,
+			hasCreateAction,
+			hasAssignAction,
+		} = this.props;
+
 		const klass = taxonomy.hierarchical ? 'hierarchical' : 'non-hierarchical'; // @helgatheviking
 
 		if ( ! hasAssignAction ) {
 			return null;
 		}
 
-		const { availableTermsTree, availableTerms, filteredTermsTree, formName, formParent, loading, showForm, filterValue } = this.state;
-		const labelWithFallback = ( labelProperty, fallbackIsCategory, fallbackIsNotCategory ) => get(
-			taxonomy,
-			[ 'labels', labelProperty ],
-			slug === 'category' ? fallbackIsCategory : fallbackIsNotCategory
-		);
+		const { 
+			availableTermsTree, 
+			availableTerms, 
+			filteredTermsTree, 
+			formName, 
+			formParent, 
+			loading, 
+			showForm, 
+			filterValue,
+		} = this.state;
+		const labelWithFallback = (
+			labelProperty,
+			fallbackIsCategory,
+			fallbackIsNotCategory
+		) =>
+			get(
+				taxonomy,
+				[ 'labels', labelProperty ],
+				slug === 'category' ? fallbackIsCategory : fallbackIsNotCategory
+			);
 		const newTermButtonLabel = labelWithFallback(
 			'add_new_item',
 			__( 'Add new category' ),
@@ -392,28 +468,31 @@ class RadioTermSelector extends Component {
 
 		const noneSelected = terms.length ? 0 : -1; // @helgatheviking
 		const noneLabel = sprintf( // @helgatheviking
-					_x( 'No %s', 'term', 'radio-buttons-for-taxonomies' ),
-					get(
-						this.props.taxonomy,
-						[ 'labels', 'singular_name' ],
-						slug === 'category' ? __( 'Category' ) : __( 'Term' )
-					)
-				);
+			/* translators: %s: taxonomy name */	
+			_x( 'No %s', 'term', 'radio-buttons-for-taxonomies' ),
+				get(
+					this.props.taxonomy,
+					[ 'labels', 'singular_name' ],
+					slug === 'category' ? __( 'Category' ) : __( 'Term' )
+				)
+			);
 
 		return [
-			showFilter && <label
-				key="filter-label"
-				htmlFor={ filterInputId }>
-				{ filterLabel }
-			</label>,
-			showFilter && <input
-				type="search"
-				id={ filterInputId }
-				value={ filterValue }
-				onChange={ this.setFilterValue }
-				className="editor-post-taxonomies__hierarchical-terms-filter"
-				key="term-filter-input"
-			/>,
+			showFilter && (
+				<label key="filter-label" htmlFor={ filterInputId }>
+					{ filterLabel }
+				</label>
+			),
+			showFilter && (
+				<input
+					type="search"
+					id={ filterInputId }
+					value={ filterValue }
+					onChange={ this.setFilterValue }
+					className="editor-post-taxonomies__hierarchical-terms-filter"
+					key="term-filter-input"
+				/>
+			),
 			<div
 				className="editor-post-taxonomies__hierarchical-terms-list"
 				key="term-list"
@@ -487,4 +566,39 @@ class RadioTermSelector extends Component {
 	}
 }
 
-export default RadioTermSelector;
+export default compose( [
+	withSelect( ( select, { slug } ) => {
+		const { getCurrentPost } = select( 'core/editor' );
+		const { getTaxonomy } = select( 'core' );
+		const taxonomy = getTaxonomy( slug );
+		return {
+			hasCreateAction: taxonomy
+				? get(
+						getCurrentPost(),
+						[ '_links', 'wp:action-create-' + taxonomy.rest_base ],
+						false
+				  )
+				: false,
+			hasAssignAction: taxonomy
+				? get(
+						getCurrentPost(),
+						[ '_links', 'wp:action-assign-' + taxonomy.rest_base ],
+						false
+				  )
+				: false,
+			terms: taxonomy
+				? select( 'core/editor' ).getEditedPostAttribute(
+						taxonomy.rest_base
+				  )
+				: [],
+			taxonomy,
+		};
+	} ),
+	withDispatch( ( dispatch ) => ( {
+		onUpdateTerms( terms, restBase ) {
+			dispatch( 'core/editor' ).editPost( { [ restBase ]: terms } );
+		},
+	} ) ),
+	withSpokenMessages,
+	withInstanceId,
+] )( RadioTermSelector );

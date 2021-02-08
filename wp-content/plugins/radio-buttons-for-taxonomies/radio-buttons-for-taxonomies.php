@@ -3,7 +3,7 @@
  * Plugin Name: 	  Radio Buttons for Taxonomies
  * Plugin URI: 		  http://www.kathyisawesome.com/441/radio-buttons-for-taxonomies
  * Description: 	  Use radio buttons for any taxonomy so users can only select 1 term at a time
- * Version:           2.2.1
+ * Version:           2.2.3
  * Author:            helgatheviking
  * Author URI:        https://www.kathyisawesome.com
  * Requires at least: 4.5.0
@@ -46,7 +46,7 @@ class Radio_Buttons_For_Taxonomies {
 	protected static $_instance = null;
 
 	/* @var str $version */
-	public static $version = '2.2.1';
+	public static $version = '2.2.3';
 
 	/* @var array $options - The plugin's options. */
 	public $options = array();
@@ -255,14 +255,15 @@ class Radio_Buttons_For_Taxonomies {
 		wp_register_script( 'radiotax', plugins_url( 'js/radiotax' . $suffix . '.js', __FILE__ ), array( 'jquery', 'inline-edit-post' ), self::$version, true );
 
 		// Get admin screen id.
-		$screen      = get_current_screen();
-		$screen_base = $screen ? $screen->base : '';
-		$post_type    = $screen ? $screen->post_type : '';
+		$screen           = get_current_screen();
+		$screen_base      = $screen ? $screen->base : '';
+		$post_type        = $screen ? $screen->post_type : '';
+		$has_block_editor = is_callable( array( $screen, 'is_block_editor' ) ) && $screen->is_block_editor();
 
-		/*
+		/**
 		 * Enqueue scripts.
 		 */
-		if ( 'post' === $screen_base || 'edit' === $screen_base ) {
+		if ( in_array( $screen_base, array( 'post', 'edit' ) ) && ! $has_block_editor ) {
 
 			// If the post type has a radio taxonomy.
 			if ( $post_type && array_intersect( $this->options['taxonomies'], get_object_taxonomies( $post_type, 'names' ) ) ) {
