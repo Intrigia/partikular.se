@@ -230,11 +230,6 @@ get_header();
       </div>
 		</div>
     <div class="sciencemag__post__content">
-  		<div class="darkmode__wrapper">
-  			<div class="darkmode__button" onclick="darkmode()">
-  			<img src="<?php echo get_template_directory_uri() . "/icons/lightbulb.svg" ?>"/>
-  		  </div>
-  		</div>
   	  <div class="entry-content">
   		<?php
   		the_content( sprintf(
@@ -273,29 +268,6 @@ get_header();
 		</main><!-- #main -->
 	</div><!-- #primary -->
   <script>
-  //1 = SVART, 0 = NORMAL
-  if (localStorage.getItem('svart') != '1') {
-    localStorage.setItem('svart', '1');
-  } else {
-    localStorage.removeItem('svart');
-  }
-  function darkmode() {
-    if (localStorage.getItem('svart') != '1') {
-      document.querySelector(".sciencemag__post__content").classList.add("sciencemag__post__content__dark");
-      document.querySelector(".darkmode__button").classList.add("buttons__dark");
-      ntableelements = document.getElementsByClassName("wp-block-table");
-      if (ntableelements.length > 0) {document.querySelector(".wp-block-table").classList.add("wp-block-table-dark");}
-      localStorage.setItem('svart', '1');
-    } else {
-      document.querySelector(".sciencemag__post__content").classList.remove("sciencemag__post__content__dark");
-      document.querySelector(".darkmode__button").classList.remove("buttons__dark");
-      ntableelements = document.getElementsByClassName("wp-block-table");
-      if (ntableelements.length > 0) {document.querySelector(".wp-block-table").classList.remove("wp-block-table-dark");}
-      localStorage.removeItem('svart');
-    }
-  }
-  darkmode();
-
   var scene = document.querySelector('.sciencemag__page__hero');
   var parallaxInstance = new Parallax(scene);
   </script>

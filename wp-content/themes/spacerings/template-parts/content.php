@@ -42,7 +42,7 @@ $author_id = get_the_author_meta('id')
 		<div class="hero__image__wrapper">
 			<div class="hero__image">
 				<?php if (has_post_thumbnail( $post->ID ) ):
-					the_post_thumbnail( 'medium' );
+					the_post_thumbnail( 'large' );
 				endif; ?>
 			</div>
 		</div>
