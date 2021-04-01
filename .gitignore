@@ -1,5 +1,6 @@
 # Ignore everything in the root except the "wp-content" directory.
 /*
+!.github
 !.gitignore
 !wp-content/
 .DS_Store
