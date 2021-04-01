@@ -331,7 +331,6 @@ class Updater
         $this->markComponentSuccessfullyUpdated($componentName, $updatedVersion);
 
         $this->executeListenerHook('onComponentUpdateFinished', array($componentName, $updatedVersion, $warningMessages));
-        ServerFilesGenerator::createHtAccessFiles();
         return $warningMessages;
     }
 
@@ -484,6 +483,8 @@ class Updater
                 $currentAccess->setSuperUserAccess(true);
             }
 
+            $pluginManager = \Piwik\Plugin\Manager::getInstance();
+
             // if error in any core update, show message + help message + EXIT
             // if errors in any plugins updates, show them on screen, disable plugins that errored + CONTINUE
             // if warning in any core update or in any plugins update, show message + CONTINUE
@@ -496,8 +497,11 @@ class Updater
                     if ($name == 'core') {
                         $coreError = true;
                         break;
-                    } elseif (\Piwik\Plugin\Manager::getInstance()->isPluginActivated($name)) {
-                        \Piwik\Plugin\Manager::getInstance()->deactivatePlugin($name);
+                    } elseif ($pluginManager->isPluginActivated($name) && $pluginManager->isPluginBundledWithCore($name)) {
+                        $coreError = true;
+                        break;
+                    } elseif ($pluginManager->isPluginActivated($name)) {
+                        $pluginManager->deactivatePlugin($name);
                         $deactivatedPlugins[] = $name;
                     }
                 }

@@ -6,7 +6,7 @@
     'aliases' => 
     array (
     ),
-    'reference' => 'c082121491117e268bc2529f5c345d09f64d37b6',
+    'reference' => 'b57b09944e421d638d09f5964cedf34c9c0db71b',
     'name' => 'publishpress/publishpress',
   ),
   'versions' => 
@@ -36,7 +36,7 @@
       'aliases' => 
       array (
       ),
-      'reference' => 'c082121491117e268bc2529f5c345d09f64d37b6',
+      'reference' => 'b57b09944e421d638d09f5964cedf34c9c0db71b',
     ),
     'publishpress/wordpress-version-notices' => 
     array (

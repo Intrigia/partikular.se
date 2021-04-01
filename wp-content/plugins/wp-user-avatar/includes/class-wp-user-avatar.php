@@ -72,15 +72,18 @@ class WP_User_Avatar {
     add_filter('media_view_settings', array($this, 'wpua_media_view_settings'), 10, 1);
   }
 
-  /**
-   * Avatars have no parent posts
-   * @since 1.8.4
-   * @param array $settings
-   * @uses object $post
-   * @uses bool $wpua_is_profile
-   * @uses is_admin()
-   * array $settings
-   */
+    /**
+     * Avatars have no parent posts
+     *
+     * @param array $settings
+     *
+     * @return array
+     * @uses object $post
+     * @uses bool $wpua_is_profile
+     * @uses is_admin()
+     * array $settings
+     * @since 1.8.4
+     */
   public function wpua_media_view_settings($settings) {
     global $post, $wpua_is_profile;
     // Get post ID so not to interfere with media uploads

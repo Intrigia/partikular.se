@@ -4,7 +4,7 @@ Contributors: properfraction, collizo4sky
 Tags: user profile, avatar, gravatar, author image, author photo, author avatar, bbPress, profile avatar, profile image, user avatar, user image, user photo, widget
 Requires at least: 4.0
 Tested up to: 5.7
-Stable tag: 2.2.12
+Stable tag: 2.2.15
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -369,6 +369,15 @@ This would output:
 4. After you've chosen a WP User Avatar image, you will see the option to remove it.
 
 == Changelog ==
+
+= 2.2.15 =
+* Fixed broken avatar in some edge cases.
+
+= 2.2.14 =
+* Added missing space before classes.
+
+= 2.2.13 =
+* Fixed broken avatar image.
 
 = 2.2.12 =
 * Fixed issue where contributors and subscribers could see posts in the backend.

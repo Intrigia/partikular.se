@@ -472,20 +472,18 @@ class WP_User_Avatar_Functions {
           $wpua_final_avatar_image_src = str_replace('d=wp_user_avatar', 'd='.urlencode($wpua_default_avatar_image_src), $wpua_avatar_image_src);
         }
 
-       //$avatar = $avatar;
-       $avatar = sprintf(
-           '<img src="'.$wpua_final_avatar_image_src.'"'.$default_image_details['dimensions'].' alt="'.$alt.'" class="avatar avatar-'.$size.' wp-user-avatar wp-user-avatar-'.$size.' photo avatar-default%s" />',
-           esc_attr( implode( ' ', $class ) )
-       );
+       $class_string = !empty($class) ? ' ' . esc_attr( implode( ' ', $class ) ) : '';
+
+       $avatar = '<img src="'.$wpua_final_avatar_image_src.'"'.$default_image_details['dimensions'].' alt="'.$alt.'" class="avatar avatar-'.$size.' wp-user-avatar wp-user-avatar-'.$size.' photo avatar-default'. $class_string .'" />';
 
       // User doesn't have WPUA or Gravatar and Default Avatar is wp_user_avatar, show custom Default Avatar
       } elseif($avatar_default == 'wp_user_avatar') {
 
        $default_image_details = $this->wpua_default_image($size);
-       $avatar = sprintf(
-           '<img src="'.$default_image_details['src'].'"'.$default_image_details['dimensions'].' alt="'.$alt.'" class="avatar avatar-'.$size.' wp-user-avatar wp-user-avatar-'.$size.' photo avatar-default%s" />',
-           esc_attr( implode( ' ', $class ) )
-       );
+
+       $class_string = !empty($class) ? ' ' . esc_attr( implode( ' ', $class ) ) : '';
+
+       $avatar = '<img src="'.$default_image_details['src'].'"'.$default_image_details['dimensions'].' alt="'.$alt.'" class="avatar avatar-'.$size.' wp-user-avatar wp-user-avatar-'.$size.' photo avatar-default'. $class_string .'" />';
 
        return $avatar;
 
@@ -662,11 +660,11 @@ class WP_User_Avatar_Functions {
       $wpua_image = $wpua_functions->wpua_get_attachment_image_src($wpua_meta, $get_size);
       // Add dimensions to img only if numeric size was specified
       $dimensions = is_numeric($size) ? ' width="'.$wpua_image[1].'" height="'.$wpua_image[2].'"' : "";
+
+      $class_string = !empty($class) ? ' ' . $class : '';
+
       // Construct the img tag
-      $avatar = sprintf(
-          '<img src="'.$wpua_image[0].'"'.$dimensions.' alt="'.$alt.'" class="avatar avatar-'.$size.' wp-user-avatar wp-user-avatar-'.$size.$alignclass.' photo%s" />',
-          !empty($class) ? ' ' . $class : ''
-      );
+      $avatar = '<img src="'.$wpua_image[0].'"'.$dimensions.' alt="'.$alt.'" class="avatar avatar-'.$size.' wp-user-avatar wp-user-avatar-'.$size.$alignclass.' photo'.$class_string.'" />';
     } else {
       // Check for custom image sizes
       if(in_array($size, $all_sizes)) {
