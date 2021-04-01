@@ -238,10 +238,14 @@ class WP_User_Avatar_Admin {
       'monsterid' => __('MonsterID (Generated)','wp-user-avatar'),
       'retro' => __('Retro (Generated)','wp-user-avatar')
     );
+
+    $avatar_defaults = apply_filters( 'avatar_defaults', $avatar_defaults );
+
     // No Default Avatar, set to Mystery Man
     if(empty($avatar_default)) {
       $avatar_default = 'mystery';
     }
+
     // Take avatar_defaults and get examples for unknown@gravatar.com
     foreach($avatar_defaults as $default_key => $default_name) {
       $avatar = get_avatar('unknown@gravatar.com', 32, $default_key);

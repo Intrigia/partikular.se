@@ -14,7 +14,7 @@ if (function_exists('tenup_display_ads_txt'))
 
 add_shortcode('embed-vi-ad', array(get_class(), 'vi_js_shortcode'));
 
-if ((bool)self::$alloptions[self::$opt_vi_active])
+if (!empty(self::$alloptions[self::$opt_vi_active]))
 {
     add_filter('the_content', array(get_class(), 'vi_js_placement'));
     self::wp_insert_vi_gdpr_popup_init();

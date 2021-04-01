@@ -47,12 +47,8 @@ class WP_User_Avatar_Subscriber {
     global $blog_id, $wpdb, $wpua_allow_upload, $wpua_edit_avatar;
     $wp_user_roles = $wpdb->get_blog_prefix($blog_id).'user_roles';
     $user_roles = get_option($wp_user_roles);
-    if((bool) $wpua_allow_upload == 1 && (bool) $wpua_edit_avatar == 1) {
-      $user_roles['subscriber']['capabilities']['edit_posts'] = true;
-    } else {
      if(isset($user_roles['subscriber']['capabilities']['edit_posts'])){
      	unset($user_roles['subscriber']['capabilities']['edit_posts']);
-     }
     }
     update_option($wp_user_roles, $user_roles);
   }

@@ -15,7 +15,9 @@ import "./editor.scss";
 const { __ } = wp.i18n; // Import __() from wp.i18n
 const { registerBlockType } = wp.blocks; // Import registerBlockType() from wp.blocks
 const { Component, Fragment } = wp.element;
-const { ServerSideRender, Button, Modal } = wp.components;
+const { Button, Modal } = wp.components;
+const { serverSideRender: ServerSideRender } = wp;
+
 //const { withState } = wp.compose;
 
 import debounce from "lodash/debounce";
@@ -153,7 +155,7 @@ registerBlockType("epyt/youtube", {
 			}
 
 			return (
-				<div className="components-placeholder editor-media-placeholder wp-block-image epytblock">
+				<div className="components-placeholder is-large editor-media-placeholder wp-block-image epytblock">
 					<div className="components-placeholder__label">
 						<svg
 							xmlns="http://www.w3.org/2000/svg"
@@ -198,7 +200,7 @@ registerBlockType("epyt/youtube", {
 						</div>
 						<div className="components-placeholder__fieldset">
 							<div>
-								<Button isDefault isLarge onClick={ this.showModal }>
+								<Button isPrimary onClick={ this.showModal }>
 									Open Wizard
 								</Button>
 								{this.state.show ? (

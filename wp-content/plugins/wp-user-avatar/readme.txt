@@ -3,8 +3,8 @@
 Contributors: properfraction, collizo4sky
 Tags: user profile, avatar, gravatar, author image, author photo, author avatar, bbPress, profile avatar, profile image, user avatar, user image, user photo, widget
 Requires at least: 4.0
-Tested up to: 5.6
-Stable tag: 2.2.10
+Tested up to: 5.7
+Stable tag: 2.2.12
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -369,6 +369,15 @@ This would output:
 4. After you've chosen a WP User Avatar image, you will see the option to remove it.
 
 == Changelog ==
+
+= 2.2.12 =
+* Fixed issue where contributors and subscribers could see posts in the backend.
+* Fixed Persistent XSS via display name when avatar is displayed.
+
+= 2.2.11 =
+* Added classes passed to get_avatar function to avatar display
+* Added avatar_defaults filter.
+* Fix wpua_get_avatar_url not passing args further down.
 
 = 2.2.10 =
 * Fixed: Warning: Missing argument 2 for WP_User_Avatar.

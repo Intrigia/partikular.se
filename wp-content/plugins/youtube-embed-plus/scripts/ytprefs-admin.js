@@ -279,7 +279,8 @@
         // Create IE + others compatible event handler
         var epeventMethod = window.addEventListener ? "addEventListener" : "attachEvent";
         var epeventer = window[epeventMethod];
-        var epmessageEvent = epeventMethod === "attachEvent" ? "onmessage" : "message";
+        var epmessageEvent = epeventMethod == "attachEvent" ? "onmessage" : "message";
+
         // Listen to message from child window
         epeventer(epmessageEvent, function (e)
         {
@@ -354,7 +355,7 @@
         {
             send_to_editor('<p>[embed-vi-ad]</p>');
         });
-        $(window).resize(window._EPYTA_.widen_ytprefs_wiz);
+        $(window).on('resize', window._EPYTA_.widen_ytprefs_wiz);
 
         $(document).on('wp-before-tinymce-init.ytprefs-media_button', function (event, init)
         {
@@ -385,7 +386,7 @@
         {
             e.preventDefault();
             var tab = $(this).attr('href');
-            $('.nav-tab-wrapper a[href="' + tab + '"], .nav-tab-wrapper a[rel="' + tab + '"]').click();
+            $('.nav-tab-wrapper a[href="' + tab + '"], .nav-tab-wrapper a[rel="' + tab + '"]').trigger('click');
         });
 
 
@@ -394,7 +395,7 @@
             if (ev.which == 13)
             {
                 ev.preventDefault();
-                $(this).find('.ytprefs-ajax-form--submit:not([disabled])').click();
+                $(this).find('.ytprefs-ajax-form--submit:not([disabled])').trigger('click');
             }
         });
 
@@ -658,7 +659,7 @@
             $('.vi-how-works').on('click', function ()
             {
                 var hash = $(this).data('jump'); // jstab
-                $('.nav-tab-wrapper > a[href="' + hash + '"]').click();
+                $('.nav-tab-wrapper > a[href="' + hash + '"]').trigger('click');
             });
 
             $(document).on('click', '.wrap-vi-settings .nav-tab-wrapper a', function ()
@@ -1172,7 +1173,7 @@
     {
         if (_EPYTA_.onboarded != '1')
         {
-            $('.ytprefs-onboarding-launch').click();
+            $('.ytprefs-onboarding-launch').trigger('click');
         }
     }); // end onload
 })(window, jQuery);

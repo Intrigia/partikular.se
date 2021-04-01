@@ -7,7 +7,7 @@ window._EPYTWIZ_ = window._EPYTWIZ_ || {};
         var $this = this,
                 $window = $(window);
 
-        $window.scroll(function (e)
+        $window.on('scroll', function (e)
         {
             if ($window.scrollTop() > pos)
             {
@@ -93,7 +93,7 @@ window._EPYTWIZ_ = window._EPYTWIZ_ || {};
             },
             heightStyle: "content",
             autoHeight: false
-        }).find('h3.header-go').click(function ()
+        }).find('h3.header-go').on('click', function ()
         {
             window.open($(this).find('a').attr('href'), '_blank');
             return false;
@@ -104,7 +104,7 @@ window._EPYTWIZ_ = window._EPYTWIZ_ || {};
 
         if (window._EPYTWIZ_.acc_expand)
         {
-            $('.wiz-accordion #' + window._EPYTWIZ_.acc_expand).click();
+            $('.wiz-accordion #' + window._EPYTWIZ_.acc_expand).trigger('click');
         }
 
         $('form.wizform').each(function ()

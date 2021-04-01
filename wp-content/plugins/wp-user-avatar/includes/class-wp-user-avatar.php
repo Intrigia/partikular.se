@@ -193,9 +193,6 @@ class WP_User_Avatar {
             </p>
             <p id="<?php echo ($user == 'add-new-user') ? 'wpua-remove-button' : 'wpua-remove-button-existing' ?>" class="<?php echo $hide_remove; ?>">
                 <button type="button" class="button" id="<?php echo ($user == 'add-new-user') ? 'wpua-remove' : 'wpua-remove-existing' ?>" name="wpua-remove"><?php _e('Remove Image', 'wp-user-avatar'); ?></button>
-                <?php if ((bool)$wpua_edit_avatar == 1 && ! $wp_user_avatar->wpua_is_author_or_above() && has_wp_user_avatar($current_user->ID) && $wp_user_avatar->wpua_author($wpua, $current_user->ID)) : // Edit button ?>
-                    <span id="<?php echo ($user == 'add-new-user') ? 'wpua-edit-attachment' : 'wpua-edit-attachment-existing' ?>"><a href="<?php echo $edit_attachment_link; ?>" class="edit-attachment" target="_blank"><?php _e('Edit Image', 'wp-user-avatar'); ?></a></span>
-                <?php endif; ?>
             </p>
             <p id="<?php echo ($user == 'add-new-user') ? 'wpua-undo-button' : 'wpua-undo-button-existing' ?>">
                 <button type="button" class="button" id="<?php echo ($user == 'add-new-user') ? 'wpua-undo' : 'wpua-undo-existing' ?>" name="wpua-undo"><?php _e('Undo', 'wp-user-avatar'); ?></button>

@@ -23,17 +23,20 @@ function has_wp_user_avatar($id_or_email="", $has_wpua="", $user="", $user_id=""
 
 /**
  * Find WPUA, show get_avatar if empty
- * @since 1.8
+ *
  * @param int|string $id_or_email
  * @param int|string $size
  * @param string $align
  * @param string $alt
- * @uses object $wpua_functions
+ * @param array $class
+ *
  * @return object get_wp_user_avatar()
+ * @since 1.8
+ * @uses object $wpua_functions
  */
-function get_wp_user_avatar($id_or_email="", $size="", $align="", $alt="") {
+function get_wp_user_avatar($id_or_email="", $size="", $align="", $alt="",$class=[]) {
   global $wpua_functions;
-  return $wpua_functions->get_wp_user_avatar($id_or_email, $size, $align, $alt);
+  return $wpua_functions->get_wp_user_avatar($id_or_email, $size, $align, $alt, $class);
 }
 
 /**

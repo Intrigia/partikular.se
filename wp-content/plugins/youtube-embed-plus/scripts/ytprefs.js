@@ -145,11 +145,11 @@
 
                                 if ($nextvid.length)
                                 {
-                                    $nextvid.click();
+                                    $nextvid.trigger('click');
                                 }
                                 else
                                 {
-                                    $gallery.find('.epyt-pagebutton.epyt-next[data-pagetoken!=""][data-pagetoken]').first().click();
+                                    $gallery.find('.epyt-pagebutton.epyt-next[data-pagetoken!=""][data-pagetoken]').first().trigger('click');
 
                                 }
                             }
@@ -404,7 +404,7 @@
                                     if ((code === 13) || (code === 32))
                                     {
                                         e.preventDefault();
-                                        $(this).click();
+                                        $(this).trigger('click');
 
                                     }
                                 });
@@ -460,7 +460,7 @@
 
                                             if ($container.find('.epyt-pagebutton').first().data('autonext') == '1' && !humanClick)
                                             {
-                                                $container.find('.epyt-gallery-thumb').first().click();
+                                                $container.find('.epyt-gallery-thumb').first().trigger('click');
                                             }
 
                                         })
