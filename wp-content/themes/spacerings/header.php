@@ -123,4 +123,7 @@ Website developed by Karl Sellergren. Check out my LinkedIn profile: https://www
 				</ul>
 			</div>
 		</div>
+		<div class="temp-referrer-message" style="width:100%;position:fixed;top:70px;padding: 5px 0;background: #202020;color:white;font-size: 15px;">
+			<span>Just nu på Partikular – Sök till nästa års styrelse. <a href="https://www.partikular.se/sok-till-styrelsen/" style="font-weight: bold;color: #833e9b;">Klicka här för att läsa mer</a>
+		</div>
 	</header><!-- #masthead -->
