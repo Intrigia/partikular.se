@@ -123,9 +123,4 @@ Website developed by Karl Sellergren. Check out my LinkedIn profile: https://www
 				</ul>
 			</div>
 		</div>
-		<?php if (true == false) {?>
-			<div class="temp-referrer-message" style="width:calc(100% - 30px);position:fixed;top:70px;padding: 9px 15px;background: #fff;color:#000;font-size:13px;z-index:100;">
-				<span>Promo message here. <a href="https://www.partikular.se" style="font-weight: bold;background: -webkit-linear-gradient(45deg,#803397, #019f87);-webkit-background-clip: text;-webkit-text-fill-color: transparent;">Link here</a>
-			</div>
-		<?php}?>
 	</header><!-- #masthead -->
